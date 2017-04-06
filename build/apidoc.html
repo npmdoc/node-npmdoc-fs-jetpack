@@ -1,0 +1,3887 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/szwacz/fs-jetpack"
+
+    >fs-jetpack (v0.13.3)</a>
+</h1>
+<h4>Better file system API</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fs-jetpack">module fs-jetpack</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.append">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>append
+            <span class="apidocSignatureSpan">(path, data, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.appendAsync">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>appendAsync
+            <span class="apidocSignatureSpan">(path, data, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.copy">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>copy
+            <span class="apidocSignatureSpan">(from, to, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.copyAsync">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>copyAsync
+            <span class="apidocSignatureSpan">(from, to, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.createReadStream">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>createReadStream
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.createWriteStream">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>createWriteStream
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.cwd">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>cwd
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.dir">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>dir
+            <span class="apidocSignatureSpan">(path, criteria)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.dirAsync">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>dirAsync
+            <span class="apidocSignatureSpan">(path, criteria)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.exists">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>exists
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.existsAsync">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>existsAsync
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.file">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>file
+            <span class="apidocSignatureSpan">(path, criteria)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.fileAsync">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>fileAsync
+            <span class="apidocSignatureSpan">(path, criteria)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.find">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>find
+            <span class="apidocSignatureSpan">(startPath, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.findAsync">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>findAsync
+            <span class="apidocSignatureSpan">(startPath, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.inspect">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>inspect
+            <span class="apidocSignatureSpan">(path, fieldsToInclude)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.inspectAsync">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>inspectAsync
+            <span class="apidocSignatureSpan">(path, fieldsToInclude)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.inspectTree">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>inspectTree
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.inspectTreeAsync">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>inspectTreeAsync
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.list">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>list
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.listAsync">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>listAsync
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.move">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>move
+            <span class="apidocSignatureSpan">(from, to)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.moveAsync">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>moveAsync
+            <span class="apidocSignatureSpan">(from, to)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.path">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>path
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.read">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>read
+            <span class="apidocSignatureSpan">(path, returnAs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.readAsync">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>readAsync
+            <span class="apidocSignatureSpan">(path, returnAs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.remove">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>remove
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.removeAsync">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>removeAsync
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.rename">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>rename
+            <span class="apidocSignatureSpan">(path, newName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.renameAsync">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>renameAsync
+            <span class="apidocSignatureSpan">(path, newName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.symlink">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>symlink
+            <span class="apidocSignatureSpan">(symlinkValue, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.symlinkAsync">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>symlinkAsync
+            <span class="apidocSignatureSpan">(symlinkValue, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.write">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>write
+            <span class="apidocSignatureSpan">(path, data, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.writeAsync">
+            function <span class="apidocSignatureSpan">fs-jetpack.</span>writeAsync
+            <span class="apidocSignatureSpan">(path, data, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fs-jetpack.</span>inspect_tree</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fs-jetpack.</span>streams</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fs-jetpack.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fs-jetpack.append">module fs-jetpack.append</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.append.async">
+            function <span class="apidocSignatureSpan">fs-jetpack.append.</span>async
+            <span class="apidocSignatureSpan">(path, data, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.append.sync">
+            function <span class="apidocSignatureSpan">fs-jetpack.append.</span>sync
+            <span class="apidocSignatureSpan">(path, data, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.append.validateInput">
+            function <span class="apidocSignatureSpan">fs-jetpack.append.</span>validateInput
+            <span class="apidocSignatureSpan">(methodName, path, data, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fs-jetpack.dir">module fs-jetpack.dir</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.dir.async">
+            function <span class="apidocSignatureSpan">fs-jetpack.dir.</span>async
+            <span class="apidocSignatureSpan">(path, passedCriteria)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.dir.createAsync">
+            function <span class="apidocSignatureSpan">fs-jetpack.dir.</span>createAsync
+            <span class="apidocSignatureSpan">(path, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.dir.createSync">
+            function <span class="apidocSignatureSpan">fs-jetpack.dir.</span>createSync
+            <span class="apidocSignatureSpan">(path, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.dir.sync">
+            function <span class="apidocSignatureSpan">fs-jetpack.dir.</span>sync
+            <span class="apidocSignatureSpan">(path, passedCriteria)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.dir.validateInput">
+            function <span class="apidocSignatureSpan">fs-jetpack.dir.</span>validateInput
+            <span class="apidocSignatureSpan">(methodName, path, criteria)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fs-jetpack.exists">module fs-jetpack.exists</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.exists.async">
+            function <span class="apidocSignatureSpan">fs-jetpack.exists.</span>async
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.exists.sync">
+            function <span class="apidocSignatureSpan">fs-jetpack.exists.</span>sync
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.exists.validateInput">
+            function <span class="apidocSignatureSpan">fs-jetpack.exists.</span>validateInput
+            <span class="apidocSignatureSpan">(methodName, path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fs-jetpack.file">module fs-jetpack.file</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.file.async">
+            function <span class="apidocSignatureSpan">fs-jetpack.file.</span>async
+            <span class="apidocSignatureSpan">(path, passedCriteria)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.file.sync">
+            function <span class="apidocSignatureSpan">fs-jetpack.file.</span>sync
+            <span class="apidocSignatureSpan">(path, passedCriteria)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.file.validateInput">
+            function <span class="apidocSignatureSpan">fs-jetpack.file.</span>validateInput
+            <span class="apidocSignatureSpan">(methodName, path, criteria)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fs-jetpack.find">module fs-jetpack.find</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.find.async">
+            function <span class="apidocSignatureSpan">fs-jetpack.find.</span>async
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.find.sync">
+            function <span class="apidocSignatureSpan">fs-jetpack.find.</span>sync
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.find.validateInput">
+            function <span class="apidocSignatureSpan">fs-jetpack.find.</span>validateInput
+            <span class="apidocSignatureSpan">(methodName, path, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fs-jetpack.inspect">module fs-jetpack.inspect</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.inspect.async">
+            function <span class="apidocSignatureSpan">fs-jetpack.inspect.</span>async
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.inspect.sync">
+            function <span class="apidocSignatureSpan">fs-jetpack.inspect.</span>sync
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.inspect.validateInput">
+            function <span class="apidocSignatureSpan">fs-jetpack.inspect.</span>validateInput
+            <span class="apidocSignatureSpan">(methodName, path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fs-jetpack.inspect.</span>supportedChecksumAlgorithms</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">fs-jetpack.inspect.</span>symlinkOptions</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fs-jetpack.inspect_tree">module fs-jetpack.inspect_tree</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.inspect_tree.async">
+            function <span class="apidocSignatureSpan">fs-jetpack.inspect_tree.</span>async
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.inspect_tree.sync">
+            function <span class="apidocSignatureSpan">fs-jetpack.inspect_tree.</span>sync
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.inspect_tree.validateInput">
+            function <span class="apidocSignatureSpan">fs-jetpack.inspect_tree.</span>validateInput
+            <span class="apidocSignatureSpan">(methodName, path, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fs-jetpack.list">module fs-jetpack.list</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.list.async">
+            function <span class="apidocSignatureSpan">fs-jetpack.list.</span>async
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.list.sync">
+            function <span class="apidocSignatureSpan">fs-jetpack.list.</span>sync
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.list.validateInput">
+            function <span class="apidocSignatureSpan">fs-jetpack.list.</span>validateInput
+            <span class="apidocSignatureSpan">(methodName, path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fs-jetpack.move">module fs-jetpack.move</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.move.async">
+            function <span class="apidocSignatureSpan">fs-jetpack.move.</span>async
+            <span class="apidocSignatureSpan">(from, to)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.move.sync">
+            function <span class="apidocSignatureSpan">fs-jetpack.move.</span>sync
+            <span class="apidocSignatureSpan">(from, to)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.move.validateInput">
+            function <span class="apidocSignatureSpan">fs-jetpack.move.</span>validateInput
+            <span class="apidocSignatureSpan">(methodName, from, to)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fs-jetpack.read">module fs-jetpack.read</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.read.async">
+            function <span class="apidocSignatureSpan">fs-jetpack.read.</span>async
+            <span class="apidocSignatureSpan">(path, returnAs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.read.sync">
+            function <span class="apidocSignatureSpan">fs-jetpack.read.</span>sync
+            <span class="apidocSignatureSpan">(path, returnAs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.read.validateInput">
+            function <span class="apidocSignatureSpan">fs-jetpack.read.</span>validateInput
+            <span class="apidocSignatureSpan">(methodName, path, returnAs)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fs-jetpack.rename">module fs-jetpack.rename</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.rename.async">
+            function <span class="apidocSignatureSpan">fs-jetpack.rename.</span>async
+            <span class="apidocSignatureSpan">(path, newName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.rename.sync">
+            function <span class="apidocSignatureSpan">fs-jetpack.rename.</span>sync
+            <span class="apidocSignatureSpan">(path, newName)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.rename.validateInput">
+            function <span class="apidocSignatureSpan">fs-jetpack.rename.</span>validateInput
+            <span class="apidocSignatureSpan">(methodName, path, newName)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fs-jetpack.streams">module fs-jetpack.streams</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.streams.createReadStream">
+            function <span class="apidocSignatureSpan">fs-jetpack.streams.</span>createReadStream
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.streams.createWriteStream">
+            function <span class="apidocSignatureSpan">fs-jetpack.streams.</span>createWriteStream
+            <span class="apidocSignatureSpan">(path, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fs-jetpack.symlink">module fs-jetpack.symlink</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.symlink.async">
+            function <span class="apidocSignatureSpan">fs-jetpack.symlink.</span>async
+            <span class="apidocSignatureSpan">(symlinkValue, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.symlink.sync">
+            function <span class="apidocSignatureSpan">fs-jetpack.symlink.</span>sync
+            <span class="apidocSignatureSpan">(symlinkValue, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.symlink.validateInput">
+            function <span class="apidocSignatureSpan">fs-jetpack.symlink.</span>validateInput
+            <span class="apidocSignatureSpan">(methodName, symlinkValue, path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fs-jetpack.utils">module fs-jetpack.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.utils.cleanAfterTest">
+            function <span class="apidocSignatureSpan">fs-jetpack.utils.</span>cleanAfterTest
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.utils.exec">
+            function <span class="apidocSignatureSpan">fs-jetpack.utils.</span>exec
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.utils.prepareFiles">
+            function <span class="apidocSignatureSpan">fs-jetpack.utils.</span>prepareFiles
+            <span class="apidocSignatureSpan">(jetpackDir, creationConfig)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.utils.prepareJetpackTestDir">
+            function <span class="apidocSignatureSpan">fs-jetpack.utils.</span>prepareJetpackTestDir
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.utils.showDifferenceInfo">
+            function <span class="apidocSignatureSpan">fs-jetpack.utils.</span>showDifferenceInfo
+            <span class="apidocSignatureSpan">(jetpackTime, nativeTime)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.utils.startTimer">
+            function <span class="apidocSignatureSpan">fs-jetpack.utils.</span>startTimer
+            <span class="apidocSignatureSpan">(startMessage)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.utils.waitAWhile">
+            function <span class="apidocSignatureSpan">fs-jetpack.utils.</span>waitAWhile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.fs-jetpack.write">module fs-jetpack.write</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.write.async">
+            function <span class="apidocSignatureSpan">fs-jetpack.write.</span>async
+            <span class="apidocSignatureSpan">(path, data, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.write.sync">
+            function <span class="apidocSignatureSpan">fs-jetpack.write.</span>sync
+            <span class="apidocSignatureSpan">(path, data, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.fs-jetpack.write.validateInput">
+            function <span class="apidocSignatureSpan">fs-jetpack.write.</span>validateInput
+            <span class="apidocSignatureSpan">(methodName, path, data, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fs-jetpack" id="apidoc.module.fs-jetpack">module fs-jetpack</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.append" id="apidoc.element.fs-jetpack.append">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>append
+        <span class="apidocSignatureSpan">(path, data, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">append = function (path, data, options) {
+  append.validateInput(&#x27;append&#x27;, path, data, options);
+  append.sync(resolvePath(path), data, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.appendAsync" id="apidoc.element.fs-jetpack.appendAsync">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>appendAsync
+        <span class="apidocSignatureSpan">(path, data, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">appendAsync = function (path, data, options) {
+  append.validateInput(&#x27;appendAsync&#x27;, path, data, options);
+  return append.async(resolvePath(path), data, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.copy" id="apidoc.element.fs-jetpack.copy">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>copy
+        <span class="apidocSignatureSpan">(from, to, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copy = function (from, to, options) {
+  copy.validateInput(&#x27;copy&#x27;, from, to, options);
+  copy.sync(resolvePath(from), resolvePath(to), options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+**returns:**
+Nothing.
+
+**examples:**
+```javascript
+// Copies a file (and replaces it if one already exists in &#x27;foo&#x27; directory)
+jetpack.<span class="apidocCodeKeywordSpan">copy</span>(&#x27;file.txt&#x27;, &#x27;foo/file.txt&#x27;, { overwrite: true });
+
+// Copies only &#x27;.md&#x27; files from &#x27;foo&#x27; (and subdirectories of &#x27;foo&#x27;) to &#x27;bar&#x27;.
+jetpack.copy(&#x27;foo&#x27;, &#x27;bar&#x27;, { matching: &#x27;*.md&#x27; });
+// Copies only &#x27;.md&#x27; and &#x27;.txt&#x27; files from &#x27;foo&#x27; (and subdirectories of &#x27;foo&#x27;) to &#x27;
+bar&#x27;.
+jetpack.copy(&#x27;foo&#x27;, &#x27;bar&#x27;, { matching: [&#x27;*.md&#x27;, &#x27;*.txt&#x27;] });
+
+// You can filter previous matches by defining negated pattern further in the order:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.copyAsync" id="apidoc.element.fs-jetpack.copyAsync">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>copyAsync
+        <span class="apidocSignatureSpan">(from, to, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copyAsync = function (from, to, options) {
+  copy.validateInput(&#x27;copyAsync&#x27;, from, to, options);
+  return copy.async(resolvePath(from), resolvePath(to), options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var test = function (testConfig) {
+console.log(&#x27;&#x27;);
+
+return utils.prepareFiles(toCopyDir, testConfig)
+.then(utils.waitAWhile)
+.then(function () {
+  timer = utils.startTimer(&#x27;jetpack.<span class="apidocCodeKeywordSpan">copyAsync</span>()&#x27;);
+  return toCopyDir.copyAsync(&#x27;.&#x27;, testDir.path(&#x27;copied-jetpack&#x27;));
+})
+.then(function () {
+  jetpackTime = timer();
+  return utils.waitAWhile();
+})
+.then(function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.createReadStream" id="apidoc.element.fs-jetpack.createReadStream">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>createReadStream
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createReadStream = function (path, options) {
+  return streams.createReadStream(resolvePath(path), options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// ---------------------------------------------------------
+// Async
+// ---------------------------------------------------------
+
+var fileChecksumAsync = function (path, algo) {
+return new Promise(function (resolve, reject) {
+  var hash = crypto.createHash(algo);
+  var s = fs.<span class="apidocCodeKeywordSpan">createReadStream</span>(path);
+  s.on(&#x27;data&#x27;, function (data) {
+    hash.update(data);
+  });
+  s.on(&#x27;end&#x27;, function () {
+    resolve(hash.digest(&#x27;hex&#x27;));
+  });
+  s.on(&#x27;error&#x27;, reject);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.createWriteStream" id="apidoc.element.fs-jetpack.createWriteStream">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>createWriteStream
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createWriteStream = function (path, options) {
+  return streams.createWriteStream(resolvePath(path), options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+copyAsync: function (from, to, options) {
+  copy.validateInput(&#x27;copyAsync&#x27;, from, to, options);
+  return copy.async(resolvePath(from), resolvePath(to), options);
+},
+
+createWriteStream: function (path, options) {
+  return streams.<span class="apidocCodeKeywordSpan">createWriteStream</span>(resolvePath(path), options);
+},
+createReadStream: function (path, options) {
+  return streams.createReadStream(resolvePath(path), options);
+},
+
+dir: function (path, criteria) {
+  var normalizedPath;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.cwd" id="apidoc.element.fs-jetpack.cwd">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>cwd
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cwd = function () {
+  var args;
+  var pathParts;
+
+  // return current CWD if no arguments specified...
+  if (arguments.length === 0) {
+    return getCwdPath();
+  }
+
+  // ...create new CWD context otherwise
+  args = Array.prototype.slice.call(arguments);
+  pathParts = [getCwdPath()].concat(args);
+  return jetpackContext(pathUtil.resolve.apply(null, pathParts));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Just an alias to vanilla [fs.createWriteStream](http://nodejs.org/api/fs.html#fs_fs_createwritestream_path_options).
+
+
+
+## cwd([path...])
+Returns Current Working Directory (CWD) for this instance of jetpack, or creates new jetpack object with given path as its internal
+ CWD.
+
+**Note:** fs-jetpack never changes value of `process.<span class="apidocCodeKeywordSpan">cwd</span>()`, the CWD we are talking about
+ here is internal value inside every jetpack instance.
+
+**arguments:**
+`path...` (optional) path (or many path parts) to become new CWD. Could be absolute, or relative. If relative path given new CWD
+ will be resolved basing on current CWD of this jetpack instance.
+
+**returns:**
+If `path` not specified, returns CWD path of this jetpack object. For main instance of fs-jetpack it is always `process.cwd()`.
+If `path` specified, returns new jetpack object (totally the same thing as main jetpack). The new object resolves paths according
+ to its internal CWD, not the global one (`process.cwd()`).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.dir" id="apidoc.element.fs-jetpack.dir">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>dir
+        <span class="apidocSignatureSpan">(path, criteria)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dir = function (path, criteria) {
+  var normalizedPath;
+  dir.validateInput(&#x27;dir&#x27;, path, criteria);
+  normalizedPath = resolvePath(path);
+  dir.sync(normalizedPath, criteria);
+  return cwd(normalizedPath);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// jetpack.cwd() will always return the same value as process.cwd()
+console.log(jetpack.cwd()); // &#x27;/one/two/three&#x27;
+
+// Now let&#x27;s create new CWD context...
+var jetParent = jetpack.cwd(&#x27;..&#x27;);
+console.log(jetParent.cwd()); // &#x27;/one/two&#x27;
+// ...and use this new context.
+jetParent.<span class="apidocCodeKeywordSpan">dir</span>(&#x27;four&#x27;); // we just created directory &#x27;/one/two/four&#x27
+;
+
+// One CWD context can be used to create next CWD context.
+var jetParentParent = jetParent.cwd(&#x27;..&#x27;);
+console.log(jetParentParent.cwd()); // &#x27;/one&#x27;
+
+// When many parameters specified they are treated as parts of path to resolve
+var sillyCwd = jetpack.cwd(&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.dirAsync" id="apidoc.element.fs-jetpack.dirAsync">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>dirAsync
+        <span class="apidocSignatureSpan">(path, criteria)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dirAsync = function (path, criteria) {
+  dir.validateInput(&#x27;dirAsync&#x27;, path, criteria);
+  return new Promise(function (resolve, reject) {
+    var normalizedPath = resolvePath(path);
+    dir.async(normalizedPath, criteria)
+    .then(function () {
+      resolve(cwd(normalizedPath));
+    }, reject);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.exists" id="apidoc.element.fs-jetpack.exists">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>exists
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exists = function (path) {
+  exists.validateInput(&#x27;exists&#x27;, path);
+  return exists.sync(resolvePath(path));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.existsAsync" id="apidoc.element.fs-jetpack.existsAsync">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>existsAsync
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">existsAsync = function (path) {
+  exists.validateInput(&#x27;existsAsync&#x27;, path);
+  return exists.async(resolvePath(path));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.file" id="apidoc.element.fs-jetpack.file">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>file
+        <span class="apidocSignatureSpan">(path, criteria)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">file = function (path, criteria) {
+  file.validateInput(&#x27;file&#x27;, path, criteria);
+  file.sync(resolvePath(path), criteria);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+**returns:**
+Jetpack object you called this method on (self).
+
+**examples:**
+```javascript
+// Creates file if doesn&#x27;t exist
+jetpack.<span class="apidocCodeKeywordSpan">file</span>(&#x27;something.txt&#x27;);
+
+// Creates file with mode &#x27;777&#x27; and content &#x27;Hello World!&#x27;
+jetpack.file(&#x27;hello.txt&#x27;, { mode: &#x27;777&#x27;, content: &#x27;Hello World!&#x27; });
+```
+
+
+## find([path], searchOptions)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.fileAsync" id="apidoc.element.fs-jetpack.fileAsync">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>fileAsync
+        <span class="apidocSignatureSpan">(path, criteria)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fileAsync = function (path, criteria) {
+  var that = this;
+  file.validateInput(&#x27;fileAsync&#x27;, path, criteria);
+  return new Promise(function (resolve, reject) {
+    file.async(resolvePath(path), criteria)
+    .then(function () {
+      resolve(that);
+    }, reject);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var prepareFiles = function (jetpackDir, creationConfig) {
+  return new Promise(function (resolve, reject) {
+var count = 0;
+var content = new Buffer(creationConfig.size);
+
+var makeOneFile = function () {
+  jetpackDir.<span class="apidocCodeKeywordSpan">fileAsync</span>(count + &#x27;.txt&#x27;, { content: content })
+  .then(function () {
+    count += 1;
+    if (count &#x3c; creationConfig.files) {
+      makeOneFile();
+    } else {
+      resolve();
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.find" id="apidoc.element.fs-jetpack.find">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>find
+        <span class="apidocSignatureSpan">(startPath, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">find = function (startPath, options) {
+  // startPath is optional parameter, if not specified move rest of params
+  // to proper places and default startPath to CWD.
+  if (typeof options === &#x27;undefined&#x27; &#x26;&#x26; typeof startPath === &#x27;object&#x27;) {
+    options = startPath;
+    startPath = &#x27;.&#x27;;
+  }
+  find.validateInput(&#x27;find&#x27;, startPath, options);
+  return find.sync(resolvePath(startPath), normalizeOptions(options));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+**returns:**
+`Array` of found paths.
+
+**examples:**
+```javascript
+// Finds all files which has 2015 in the name
+jetpack.<span class="apidocCodeKeywordSpan">find</span>(&#x27;my-work&#x27;, { matching: &#x27;*2015*&#x27; });
+
+// Finds all &#x27;.txt&#x27; files inside &#x27;foo/bar&#x27; directory and its subdirectories
+jetpack.find(&#x27;foo&#x27;, { matching: &#x27;bar/**/*.txt&#x27; });
+// Finds all &#x27;.txt&#x27; files inside &#x27;foo/bar&#x27; directory WITHOUT subdirectories
+jetpack.find(&#x27;foo&#x27;, { matching: &#x27;bar/*.txt&#x27; });
+
+// Finds all &#x27;.js&#x27; files inside &#x27;my-project&#x27; but excluding those in &#x27;vendor&#x27; subtree.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.findAsync" id="apidoc.element.fs-jetpack.findAsync">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>findAsync
+        <span class="apidocSignatureSpan">(startPath, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findAsync = function (startPath, options) {
+  // startPath is optional parameter, if not specified move rest of params
+  // to proper places and default startPath to CWD.
+  if (typeof options === &#x27;undefined&#x27; &#x26;&#x26; typeof startPath === &#x27;object&#x27;) {
+    options = startPath;
+    startPath = &#x27;.&#x27;;
+  }
+  find.validateInput(&#x27;findAsync&#x27;, startPath, options);
+  return find.async(resolvePath(startPath), normalizeOptions(options));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.inspect" id="apidoc.element.fs-jetpack.inspect">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>inspect
+        <span class="apidocSignatureSpan">(path, fieldsToInclude)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inspect = function (path, fieldsToInclude) {
+  inspect.validateInput(&#x27;inspect&#x27;, path, fieldsToInclude);
+  return inspect.sync(resolvePath(path), fieldsToInclude);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.inspectAsync" id="apidoc.element.fs-jetpack.inspectAsync">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>inspectAsync
+        <span class="apidocSignatureSpan">(path, fieldsToInclude)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inspectAsync = function (path, fieldsToInclude) {
+  inspect.validateInput(&#x27;inspectAsync&#x27;, path, fieldsToInclude);
+  return inspect.async(resolvePath(path), fieldsToInclude);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.inspectTree" id="apidoc.element.fs-jetpack.inspectTree">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>inspectTree
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inspectTree = function (path, options) {
+  inspectTree.validateInput(&#x27;inspectTree&#x27;, path, options);
+  return inspectTree.sync(resolvePath(path), options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.inspectTreeAsync" id="apidoc.element.fs-jetpack.inspectTreeAsync">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>inspectTreeAsync
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inspectTreeAsync = function (path, options) {
+  inspectTree.validateInput(&#x27;inspectTreeAsync&#x27;, path, options);
+  return inspectTree.async(resolvePath(path), options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.list" id="apidoc.element.fs-jetpack.list">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>list
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">list = function (path) {
+  list.validateInput(&#x27;list&#x27;, path);
+  return list.sync(resolvePath(path || &#x27;.&#x27;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.listAsync" id="apidoc.element.fs-jetpack.listAsync">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>listAsync
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">listAsync = function (path) {
+  list.validateInput(&#x27;listAsync&#x27;, path);
+  return list.async(resolvePath(path || &#x27;.&#x27;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.move" id="apidoc.element.fs-jetpack.move">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>move
+        <span class="apidocSignatureSpan">(from, to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">move = function (from, to) {
+  move.validateInput(&#x27;move&#x27;, from, to);
+  move.sync(resolvePath(from), resolvePath(to));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.moveAsync" id="apidoc.element.fs-jetpack.moveAsync">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>moveAsync
+        <span class="apidocSignatureSpan">(from, to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">moveAsync = function (from, to) {
+  move.validateInput(&#x27;moveAsync&#x27;, from, to);
+  return move.async(resolvePath(from), resolvePath(to));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.path" id="apidoc.element.fs-jetpack.path">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>path
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">path = function () {
+  // add CWD base path as first element of arguments array
+  Array.prototype.unshift.call(arguments, getCwdPath());
+  return pathUtil.resolve.apply(null, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+**returns:**
+Resolved path as string.
+
+**examples:**
+```javascript
+jetpack.cwd(); // if it returns &#x27;/one/two&#x27;
+jetpack.<span class="apidocCodeKeywordSpan">path</span>(); // this will return the same &#x27;/one/two&#x27;
+jetpack.path(&#x27;three&#x27;); // this will return &#x27;/one/two/three&#x27;
+jetpack.path(&#x27;..&#x27;, &#x27;four&#x27;); // this will return &#x27;/one/four&#x27;
+```
+
+
+## read(path, [returnAs])
+asynchronous: **readAsync(path, [returnAs])**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.read" id="apidoc.element.fs-jetpack.read">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>read
+        <span class="apidocSignatureSpan">(path, returnAs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">read = function (path, returnAs) {
+  read.validateInput(&#x27;read&#x27;, path, returnAs);
+  return read.sync(resolvePath(path), returnAs);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Commonly used naming convention in Node world is reversed in this library (no &#x27;method&#x27; and &#x27;methodSync&#x27; naming
+). Asynchronous methods are those with &#x27;Async&#x27; suffix, all methods without &#x27;Async&#x27; in the name are synchronous
+. Reason behind this is that it gives very nice look to blocking API. And promise-based, non-blocking code is verbose anyway, so
+ one more word is not much of a difference.
+
+Also it&#x27;s just convenient...
+
+If you don&#x27;t see the word &#x22;Async&#x22; in method name it returns value immediately.
+```js
+var data = jetpack.<span class="apidocCodeKeywordSpan">read</span>(&#x27;file.txt&#x27;);
+console.log(data);
+```
+
+When you see &#x22;Async&#x22; that method returns promise which when resolved returns value.
+```js
+jetpack.readAsync(&#x27;file.txt&#x27;)
+.then(function (data) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.readAsync" id="apidoc.element.fs-jetpack.readAsync">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>readAsync
+        <span class="apidocSignatureSpan">(path, returnAs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">readAsync = function (path, returnAs) {
+  read.validateInput(&#x27;readAsync&#x27;, path, returnAs);
+  return read.async(resolvePath(path), returnAs);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```js
+var data = jetpack.read(&#x27;file.txt&#x27;);
+console.log(data);
+```
+
+When you see &#x22;Async&#x22; that method returns promise which when resolved returns value.
+```js
+jetpack.<span class="apidocCodeKeywordSpan">readAsync</span>(&#x27;file.txt&#x27;)
+.then(function (data) {
+  console.log(data);
+});
+```
+
+# API
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.remove" id="apidoc.element.fs-jetpack.remove">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>remove
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">remove = function (path) {
+  remove.validateInput(&#x27;remove&#x27;, path);
+  // If path not specified defaults to CWD
+  remove.sync(resolvePath(path || &#x27;.&#x27;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+**returns:**
+Nothing.
+
+**examples:**
+```javascript
+// Deletes file
+jetpack.<span class="apidocCodeKeywordSpan">remove</span>(&#x27;my_work/notes.txt&#x27;);
+
+// Deletes directory &#x22;important_stuff&#x22; and everything inside
+jetpack.remove(&#x27;my_work/important_stuff&#x27;);
+
+// Remove can be called with no parameters and will default to CWD then.
+// In this example folder &#x27;my_work&#x27; will cease to exist.
+var myStuffDir = jetpack.cwd(&#x27;my_stuff&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.removeAsync" id="apidoc.element.fs-jetpack.removeAsync">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>removeAsync
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeAsync = function (path) {
+  remove.validateInput(&#x27;removeAsync&#x27;, path);
+  // If path not specified defaults to CWD
+  return remove.async(resolvePath(path || &#x27;.&#x27;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+return utils.prepareFiles(dirJet, testConfig)
+.then(function () {
+  return utils.prepareFiles(dirNative, testConfig);
+})
+.then(utils.waitAWhile)
+.then(function () {
+  timer = utils.startTimer(&#x27;jetpack.<span class="apidocCodeKeywordSpan">removeAsync</span>()&#x27;);
+  return dirJet.removeAsync();
+})
+.then(function () {
+  jetpackTime = timer();
+  return utils.waitAWhile();
+})
+.then(function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.rename" id="apidoc.element.fs-jetpack.rename">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>rename
+        <span class="apidocSignatureSpan">(path, newName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rename = function (path, newName) {
+  rename.validateInput(&#x27;rename&#x27;, path, newName);
+  rename.sync(resolvePath(path), newName);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+**returns:**
+Nothing.
+
+**examples:**
+```javascript
+// The file &#x22;my_work/important.md&#x22; will be renamed to &#x22;my_work/very_important.md&#x22;
+jetpack.<span class="apidocCodeKeywordSpan">rename</span>(&#x27;my_work/important.txt&#x27;, &#x27;very_important.md&#x27;);
+```
+
+## symlink(symlinkValue, path)
+asynchronous: **symlinkAsync(symlinkValue, path)**
+
+Creates symbolic link.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.renameAsync" id="apidoc.element.fs-jetpack.renameAsync">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>renameAsync
+        <span class="apidocSignatureSpan">(path, newName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">renameAsync = function (path, newName) {
+  rename.validateInput(&#x27;renameAsync&#x27;, path, newName);
+  return rename.async(resolvePath(path), newName);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.symlink" id="apidoc.element.fs-jetpack.symlink">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>symlink
+        <span class="apidocSignatureSpan">(symlinkValue, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">symlink = function (symlinkValue, path) {
+  symlink.validateInput(&#x27;symlink&#x27;, symlinkValue, path);
+  symlink.sync(symlinkValue, resolvePath(path));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+// ---------------------------------------------------------
+// Async
+// ---------------------------------------------------------
+
+var symlinkAsync = function (symlinkValue, path) {
+return new Promise(function (resolve, reject) {
+  fs.<span class="apidocCodeKeywordSpan">symlink</span>(symlinkValue, path)
+  .then(resolve)
+  .catch(function (err) {
+    if (err.code === &#x27;ENOENT&#x27;) {
+      // Parent directories don&#x27;t exist. Just create them and rety.
+      dir.createAsync(pathUtil.dirname(path))
+      .then(function () {
+        return fs.symlink(symlinkValue, path);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.symlinkAsync" id="apidoc.element.fs-jetpack.symlinkAsync">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>symlinkAsync
+        <span class="apidocSignatureSpan">(symlinkValue, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">symlinkAsync = function (symlinkValue, path) {
+  symlink.validateInput(&#x27;symlinkAsync&#x27;, symlinkValue, path);
+  return symlink.async(symlinkValue, resolvePath(path));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.write" id="apidoc.element.fs-jetpack.write">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>write
+        <span class="apidocSignatureSpan">(path, data, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (path, data, options) {
+  write.validateInput(&#x27;write&#x27;, path, data, options);
+  write.sync(resolvePath(path), data, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        humanReadableFileSize(creationConfig.size, true) + &#x27; each)...&#x27;);
+    makeOneFile();
+  });
+};
+
+var startTimer = function (startMessage) {
+  var start = Date.now();
+  process.stdout.<span class="apidocCodeKeywordSpan">write</span>(startMessage + &#x27; ... &#x27;);
+  return function stop() {
+    var time = Date.now() - start;
+    console.log(time + &#x27;ms&#x27;);
+    return time;
+  };
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.writeAsync" id="apidoc.element.fs-jetpack.writeAsync">
+        function <span class="apidocSignatureSpan">fs-jetpack.</span>writeAsync
+        <span class="apidocSignatureSpan">(path, data, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">writeAsync = function (path, data, options) {
+  write.validateInput(&#x27;writeAsync&#x27;, path, data, options);
+  return write.async(resolvePath(path), data, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fs-jetpack.append" id="apidoc.module.fs-jetpack.append">module fs-jetpack.append</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.append.async" id="apidoc.element.fs-jetpack.append.async">
+        function <span class="apidocSignatureSpan">fs-jetpack.append.</span>async
+        <span class="apidocSignatureSpan">(path, data, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">async = function (path, data, options) {
+  return new Promise(function (resolve, reject) {
+    fs.appendFile(path, data, options)
+    .then(resolve)
+    .catch(function (err) {
+      if (err.code === &#x27;ENOENT&#x27;) {
+        // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+        // which will create the folder and file.
+        write.async(path, data, options).then(resolve, reject);
+      } else {
+        reject(err);
+      }
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return new Promise(function (resolve, reject) {
+    fs.appendFile(path, data, options)
+    .then(resolve)
+    .catch(function (err) {
+      if (err.code === &#x27;ENOENT&#x27;) {
+        // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+        // which will create the folder and file.
+        write.<span class="apidocCodeKeywordSpan">async</span>(path, data, options).then(resolve, reject);
+      } else {
+        reject(err);
+      }
+    });
+  });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.append.sync" id="apidoc.element.fs-jetpack.append.sync">
+        function <span class="apidocSignatureSpan">fs-jetpack.append.</span>sync
+        <span class="apidocSignatureSpan">(path, data, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sync = function (path, data, options) {
+  try {
+    fs.appendFileSync(path, data, options);
+  } catch (err) {
+    if (err.code === &#x27;ENOENT&#x27;) {
+      // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+      // which will create the folder and file.
+      write.sync(path, data, options);
+    } else {
+      throw err;
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var appendSync = function (path, data, options) {
+  try {
+    fs.appendFileSync(path, data, options);
+  } catch (err) {
+    if (err.code === &#x27;ENOENT&#x27;) {
+      // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+      // which will create the folder and file.
+      write.<span class="apidocCodeKeywordSpan">sync</span>(path, data, options);
+    } else {
+      throw err;
+    }
+  }
+};
+
+// ---------------------------------------------------------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.append.validateInput" id="apidoc.element.fs-jetpack.append.validateInput">
+        function <span class="apidocSignatureSpan">fs-jetpack.append.</span>validateInput
+        <span class="apidocSignatureSpan">(methodName, path, data, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateInput = function (methodName, path, data, options) {
+  var methodSignature = methodName + &#x27;(path, data, [options])&#x27;;
+  validate.argument(methodSignature, &#x27;path&#x27;, path, [&#x27;string&#x27;]);
+  validate.argument(methodSignature, &#x27;data&#x27;, data, [&#x27;string&#x27;, &#x27;buffer&#x27;]);
+  validate.options(methodSignature, &#x27;options&#x27;, options, {
+    mode: [&#x27;string&#x27;, &#x27;number&#x27;]
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // API
+
+  var api = {
+cwd: cwd,
+path: getPath,
+
+append: function (path, data, options) {
+  append.<span class="apidocCodeKeywordSpan">validateInput</span>(&#x27;append&#x27;, path, data, options);
+  append.sync(resolvePath(path), data, options);
+},
+appendAsync: function (path, data, options) {
+  append.validateInput(&#x27;appendAsync&#x27;, path, data, options);
+  return append.async(resolvePath(path), data, options);
+},
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fs-jetpack.dir" id="apidoc.module.fs-jetpack.dir">module fs-jetpack.dir</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.dir.async" id="apidoc.element.fs-jetpack.dir.async">
+        function <span class="apidocSignatureSpan">fs-jetpack.dir.</span>async
+        <span class="apidocSignatureSpan">(path, passedCriteria)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">async = function (path, passedCriteria) {
+  return new Promise(function (resolve, reject) {
+    var criteria = getCriteriaDefaults(passedCriteria);
+
+    checkWhatAlreadyOccupiesPathAsync(path)
+    .then(function (stat) {
+      if (stat !== undefined) {
+        return checkExistingDirectoryFulfillsCriteriaAsync(path, stat, criteria);
+      }
+      return createBrandNewDirectoryAsync(path, criteria);
+    })
+    .then(resolve, reject);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return new Promise(function (resolve, reject) {
+    fs.appendFile(path, data, options)
+    .then(resolve)
+    .catch(function (err) {
+      if (err.code === &#x27;ENOENT&#x27;) {
+        // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+        // which will create the folder and file.
+        write.<span class="apidocCodeKeywordSpan">async</span>(path, data, options).then(resolve, reject);
+      } else {
+        reject(err);
+      }
+    });
+  });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.dir.createAsync" id="apidoc.element.fs-jetpack.dir.createAsync">
+        function <span class="apidocSignatureSpan">fs-jetpack.dir.</span>createAsync
+        <span class="apidocSignatureSpan">(path, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createAsync = function (path, opts) {
+  var options = opts || {};
+
+  return new Promise(function (resolve, reject) {
+    fs.mkdir(path, options.mode)
+    .then(resolve)
+    .catch(function (err) {
+      if (err.code === &#x27;ENOENT&#x27;) {
+        // Parent directory doesn&#x27;t exist. Need to create it first.
+        createBrandNewDirectoryAsync(pathUtil.dirname(path), options)
+        .then(function () {
+          // Now retry creating this directory.
+          return fs.mkdir(path, options.mode);
+        })
+        .then(resolve)
+        .catch(function (err2) {
+          if (err2.code === &#x27;EEXIST&#x27;) {
+            // Hmm, something other have already created the directory?
+            // No problem for us.
+            resolve();
+          } else {
+            reject(err2);
+          }
+        });
+      } else if (err.code === &#x27;EEXIST&#x27;) {
+        // The path already exists. We&#x27;re fine.
+        resolve();
+      } else {
+        reject(err);
+      }
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var ensureDestinationPathExistsAsync = function (to) {
+return new Promise(function (resolve, reject) {
+  var destDir = pathUtil.dirname(to);
+  exists.async(destDir)
+  .then(function (dstExists) {
+    if (!dstExists) {
+      dir.<span class="apidocCodeKeywordSpan">createAsync</span>(destDir)
+      .then(resolve, reject);
+    } else {
+      // Hah, no idea.
+      reject();
+    }
+  })
+  .catch(reject);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.dir.createSync" id="apidoc.element.fs-jetpack.dir.createSync">
+        function <span class="apidocSignatureSpan">fs-jetpack.dir.</span>createSync
+        <span class="apidocSignatureSpan">(path, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createSync = function (path, opts) {
+  var options = opts || {};
+
+  try {
+    fs.mkdirSync(path, options.mode);
+  } catch (err) {
+    if (err.code === &#x27;ENOENT&#x27;) {
+      // Parent directory doesn&#x27;t exist. Need to create it first.
+      createBrandNewDirectorySync(pathUtil.dirname(path), options);
+      // Now retry creating this directory.
+      fs.mkdirSync(path, options.mode);
+    } else if (err.code === &#x27;EEXIST&#x27;) {
+      // The path already exists. We&#x27;re fine.
+    } else {
+      throw err;
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      // Ok, source or destination path doesn&#x27;t exist.
+      // Must do more investigation.
+      if (!exists.sync(from)) {
+        throw generateSourceDoesntExistError(from);
+      }
+      if (!exists.sync(to)) {
+        // Some parent directory doesn&#x27;t exist. Create it.
+        dir.<span class="apidocCodeKeywordSpan">createSync</span>(pathUtil.dirname(to));
+        // Retry the attempt
+        fs.renameSync(from, to);
+      }
+    }
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.dir.sync" id="apidoc.element.fs-jetpack.dir.sync">
+        function <span class="apidocSignatureSpan">fs-jetpack.dir.</span>sync
+        <span class="apidocSignatureSpan">(path, passedCriteria)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sync = function (path, passedCriteria) {
+  var criteria = getCriteriaDefaults(passedCriteria);
+  var stat = checkWhatAlreadyOccupiesPathSync(path);
+  if (stat) {
+    checkExistingDirectoryFulfillsCriteriaSync(path, stat, criteria);
+  } else {
+    createBrandNewDirectorySync(path, criteria);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var appendSync = function (path, data, options) {
+  try {
+    fs.appendFileSync(path, data, options);
+  } catch (err) {
+    if (err.code === &#x27;ENOENT&#x27;) {
+      // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+      // which will create the folder and file.
+      write.<span class="apidocCodeKeywordSpan">sync</span>(path, data, options);
+    } else {
+      throw err;
+    }
+  }
+};
+
+// ---------------------------------------------------------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.dir.validateInput" id="apidoc.element.fs-jetpack.dir.validateInput">
+        function <span class="apidocSignatureSpan">fs-jetpack.dir.</span>validateInput
+        <span class="apidocSignatureSpan">(methodName, path, criteria)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateInput = function (methodName, path, criteria) {
+  var methodSignature = methodName + &#x27;(path, [criteria])&#x27;;
+  validate.argument(methodSignature, &#x27;path&#x27;, path, [&#x27;string&#x27;]);
+  validate.options(methodSignature, &#x27;criteria&#x27;, criteria, {
+    empty: [&#x27;boolean&#x27;],
+    mode: [&#x27;string&#x27;, &#x27;number&#x27;]
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // API
+
+  var api = {
+cwd: cwd,
+path: getPath,
+
+append: function (path, data, options) {
+  append.<span class="apidocCodeKeywordSpan">validateInput</span>(&#x27;append&#x27;, path, data, options);
+  append.sync(resolvePath(path), data, options);
+},
+appendAsync: function (path, data, options) {
+  append.validateInput(&#x27;appendAsync&#x27;, path, data, options);
+  return append.async(resolvePath(path), data, options);
+},
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fs-jetpack.exists" id="apidoc.module.fs-jetpack.exists">module fs-jetpack.exists</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.exists.async" id="apidoc.element.fs-jetpack.exists.async">
+        function <span class="apidocSignatureSpan">fs-jetpack.exists.</span>async
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">async = function (path) {
+  return new Promise(function (resolve, reject) {
+    fs.stat(path, function (err, stat) {
+      if (err) {
+        if (err.code === &#x27;ENOENT&#x27;) {
+          resolve(false);
+        } else {
+          reject(err);
+        }
+      } else if (stat.isDirectory()) {
+        resolve(&#x27;dir&#x27;);
+      } else if (stat.isFile()) {
+        resolve(&#x27;file&#x27;);
+      } else {
+        resolve(&#x27;other&#x27;);
+      }
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return new Promise(function (resolve, reject) {
+    fs.appendFile(path, data, options)
+    .then(resolve)
+    .catch(function (err) {
+      if (err.code === &#x27;ENOENT&#x27;) {
+        // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+        // which will create the folder and file.
+        write.<span class="apidocCodeKeywordSpan">async</span>(path, data, options).then(resolve, reject);
+      } else {
+        reject(err);
+      }
+    });
+  });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.exists.sync" id="apidoc.element.fs-jetpack.exists.sync">
+        function <span class="apidocSignatureSpan">fs-jetpack.exists.</span>sync
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sync = function (path) {
+  var stat;
+  try {
+    stat = fs.statSync(path);
+    if (stat.isDirectory()) {
+      return &#x27;dir&#x27;;
+    } else if (stat.isFile()) {
+      return &#x27;file&#x27;;
+    }
+    return &#x27;other&#x27;;
+  } catch (err) {
+    if (err.code !== &#x27;ENOENT&#x27;) {
+      throw err;
+    }
+  }
+
+  return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var appendSync = function (path, data, options) {
+  try {
+    fs.appendFileSync(path, data, options);
+  } catch (err) {
+    if (err.code === &#x27;ENOENT&#x27;) {
+      // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+      // which will create the folder and file.
+      write.<span class="apidocCodeKeywordSpan">sync</span>(path, data, options);
+    } else {
+      throw err;
+    }
+  }
+};
+
+// ---------------------------------------------------------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.exists.validateInput" id="apidoc.element.fs-jetpack.exists.validateInput">
+        function <span class="apidocSignatureSpan">fs-jetpack.exists.</span>validateInput
+        <span class="apidocSignatureSpan">(methodName, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateInput = function (methodName, path) {
+  var methodSignature = methodName + &#x27;(path)&#x27;;
+  validate.argument(methodSignature, &#x27;path&#x27;, path, [&#x27;string&#x27;]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // API
+
+  var api = {
+cwd: cwd,
+path: getPath,
+
+append: function (path, data, options) {
+  append.<span class="apidocCodeKeywordSpan">validateInput</span>(&#x27;append&#x27;, path, data, options);
+  append.sync(resolvePath(path), data, options);
+},
+appendAsync: function (path, data, options) {
+  append.validateInput(&#x27;appendAsync&#x27;, path, data, options);
+  return append.async(resolvePath(path), data, options);
+},
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fs-jetpack.file" id="apidoc.module.fs-jetpack.file">module fs-jetpack.file</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.file.async" id="apidoc.element.fs-jetpack.file.async">
+        function <span class="apidocSignatureSpan">fs-jetpack.file.</span>async
+        <span class="apidocSignatureSpan">(path, passedCriteria)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">async = function (path, passedCriteria) {
+  return new Promise(function (resolve, reject) {
+    var criteria = getCriteriaDefaults(passedCriteria);
+
+    checkWhatAlreadyOccupiesPathAsync(path)
+    .then(function (stat) {
+      if (stat !== undefined) {
+        return checkExistingFileFulfillsCriteriaAsync(path, stat, criteria);
+      }
+      return createBrandNewFileAsync(path, criteria);
+    })
+    .then(resolve, reject);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return new Promise(function (resolve, reject) {
+    fs.appendFile(path, data, options)
+    .then(resolve)
+    .catch(function (err) {
+      if (err.code === &#x27;ENOENT&#x27;) {
+        // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+        // which will create the folder and file.
+        write.<span class="apidocCodeKeywordSpan">async</span>(path, data, options).then(resolve, reject);
+      } else {
+        reject(err);
+      }
+    });
+  });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.file.sync" id="apidoc.element.fs-jetpack.file.sync">
+        function <span class="apidocSignatureSpan">fs-jetpack.file.</span>sync
+        <span class="apidocSignatureSpan">(path, passedCriteria)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sync = function (path, passedCriteria) {
+  var criteria = getCriteriaDefaults(passedCriteria);
+  var stat = checkWhatAlreadyOccupiesPathSync(path);
+  if (stat !== undefined) {
+    checkExistingFileFulfillsCriteriaSync(path, stat, criteria);
+  } else {
+    createBrandNewFileSync(path, criteria);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var appendSync = function (path, data, options) {
+  try {
+    fs.appendFileSync(path, data, options);
+  } catch (err) {
+    if (err.code === &#x27;ENOENT&#x27;) {
+      // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+      // which will create the folder and file.
+      write.<span class="apidocCodeKeywordSpan">sync</span>(path, data, options);
+    } else {
+      throw err;
+    }
+  }
+};
+
+// ---------------------------------------------------------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.file.validateInput" id="apidoc.element.fs-jetpack.file.validateInput">
+        function <span class="apidocSignatureSpan">fs-jetpack.file.</span>validateInput
+        <span class="apidocSignatureSpan">(methodName, path, criteria)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateInput = function (methodName, path, criteria) {
+  var methodSignature = methodName + &#x27;(path, [criteria])&#x27;;
+  validate.argument(methodSignature, &#x27;path&#x27;, path, [&#x27;string&#x27;]);
+  validate.options(methodSignature, &#x27;criteria&#x27;, criteria, {
+    content: [&#x27;string&#x27;, &#x27;buffer&#x27;, &#x27;object&#x27;, &#x27;array&#x27;],
+    jsonIndent: [&#x27;number&#x27;],
+    mode: [&#x27;string&#x27;, &#x27;number&#x27;]
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // API
+
+  var api = {
+cwd: cwd,
+path: getPath,
+
+append: function (path, data, options) {
+  append.<span class="apidocCodeKeywordSpan">validateInput</span>(&#x27;append&#x27;, path, data, options);
+  append.sync(resolvePath(path), data, options);
+},
+appendAsync: function (path, data, options) {
+  append.validateInput(&#x27;appendAsync&#x27;, path, data, options);
+  return append.async(resolvePath(path), data, options);
+},
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fs-jetpack.find" id="apidoc.module.fs-jetpack.find">module fs-jetpack.find</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.find.async" id="apidoc.element.fs-jetpack.find.async">
+        function <span class="apidocSignatureSpan">fs-jetpack.find.</span>async
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">async = function (path, options) {
+  return inspect.async(path)
+  .then(function (entryPointInspect) {
+    if (entryPointInspect === undefined) {
+      throw generatePathDoesntExistError(path);
+    } else if (entryPointInspect.type !== &#x27;dir&#x27;) {
+      throw generatePathNotDirectoryError(path);
+    }
+    return findAsync(path, normalizeOptions(options));
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return new Promise(function (resolve, reject) {
+    fs.appendFile(path, data, options)
+    .then(resolve)
+    .catch(function (err) {
+      if (err.code === &#x27;ENOENT&#x27;) {
+        // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+        // which will create the folder and file.
+        write.<span class="apidocCodeKeywordSpan">async</span>(path, data, options).then(resolve, reject);
+      } else {
+        reject(err);
+      }
+    });
+  });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.find.sync" id="apidoc.element.fs-jetpack.find.sync">
+        function <span class="apidocSignatureSpan">fs-jetpack.find.</span>sync
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sync = function (path, options) {
+  var entryPointInspect = inspect.sync(path);
+  if (entryPointInspect === undefined) {
+    throw generatePathDoesntExistError(path);
+  } else if (entryPointInspect.type !== &#x27;dir&#x27;) {
+    throw generatePathNotDirectoryError(path);
+  }
+
+  return findSync(path, normalizeOptions(options));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var appendSync = function (path, data, options) {
+  try {
+    fs.appendFileSync(path, data, options);
+  } catch (err) {
+    if (err.code === &#x27;ENOENT&#x27;) {
+      // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+      // which will create the folder and file.
+      write.<span class="apidocCodeKeywordSpan">sync</span>(path, data, options);
+    } else {
+      throw err;
+    }
+  }
+};
+
+// ---------------------------------------------------------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.find.validateInput" id="apidoc.element.fs-jetpack.find.validateInput">
+        function <span class="apidocSignatureSpan">fs-jetpack.find.</span>validateInput
+        <span class="apidocSignatureSpan">(methodName, path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateInput = function (methodName, path, options) {
+  var methodSignature = methodName + &#x27;([path], options)&#x27;;
+  validate.argument(methodSignature, &#x27;path&#x27;, path, [&#x27;string&#x27;]);
+  validate.options(methodSignature, &#x27;options&#x27;, options, {
+    matching: [&#x27;string&#x27;, &#x27;array of string&#x27;],
+    files: [&#x27;boolean&#x27;],
+    directories: [&#x27;boolean&#x27;],
+    recursive: [&#x27;boolean&#x27;]
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // API
+
+  var api = {
+cwd: cwd,
+path: getPath,
+
+append: function (path, data, options) {
+  append.<span class="apidocCodeKeywordSpan">validateInput</span>(&#x27;append&#x27;, path, data, options);
+  append.sync(resolvePath(path), data, options);
+},
+appendAsync: function (path, data, options) {
+  append.validateInput(&#x27;appendAsync&#x27;, path, data, options);
+  return append.async(resolvePath(path), data, options);
+},
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fs-jetpack.inspect" id="apidoc.module.fs-jetpack.inspect">module fs-jetpack.inspect</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.inspect.async" id="apidoc.element.fs-jetpack.inspect.async">
+        function <span class="apidocSignatureSpan">fs-jetpack.inspect.</span>async
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">async = function (path, options) {
+  return new Promise(function (resolve, reject) {
+    var statOperation = fs.lstat;
+    options = options || {};
+
+    if (options.symlinks === &#x27;follow&#x27;) {
+      statOperation = fs.stat;
+    }
+
+    statOperation(path)
+    .then(function (stat) {
+      var inspectObj = createInspectObj(path, options, stat);
+      addExtraFieldsAsync(path, inspectObj, options)
+      .then(resolve, reject);
+    })
+    .catch(function (err) {
+      // Detection if path exists
+      if (err.code === &#x27;ENOENT&#x27;) {
+        // Doesn&#x27;t exist. Return undefined instead of throwing.
+        resolve(undefined);
+      } else {
+        reject(err);
+      }
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return new Promise(function (resolve, reject) {
+    fs.appendFile(path, data, options)
+    .then(resolve)
+    .catch(function (err) {
+      if (err.code === &#x27;ENOENT&#x27;) {
+        // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+        // which will create the folder and file.
+        write.<span class="apidocCodeKeywordSpan">async</span>(path, data, options).then(resolve, reject);
+      } else {
+        reject(err);
+      }
+    });
+  });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.inspect.sync" id="apidoc.element.fs-jetpack.inspect.sync">
+        function <span class="apidocSignatureSpan">fs-jetpack.inspect.</span>sync
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sync = function (path, options) {
+  var statOperation = fs.lstatSync;
+  var stat;
+  var inspectObj;
+  options = options || {};
+
+  if (options.symlinks === &#x27;follow&#x27;) {
+    statOperation = fs.statSync;
+  }
+
+  try {
+    stat = statOperation(path);
+  } catch (err) {
+    // Detection if path exists
+    if (err.code === &#x27;ENOENT&#x27;) {
+      // Doesn&#x27;t exist. Return undefined instead of throwing.
+      return undefined;
+    }
+    throw err;
+  }
+
+  inspectObj = createInspectObj(path, options, stat);
+  addExtraFieldsSync(path, inspectObj, options);
+
+  return inspectObj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var appendSync = function (path, data, options) {
+  try {
+    fs.appendFileSync(path, data, options);
+  } catch (err) {
+    if (err.code === &#x27;ENOENT&#x27;) {
+      // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+      // which will create the folder and file.
+      write.<span class="apidocCodeKeywordSpan">sync</span>(path, data, options);
+    } else {
+      throw err;
+    }
+  }
+};
+
+// ---------------------------------------------------------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.inspect.validateInput" id="apidoc.element.fs-jetpack.inspect.validateInput">
+        function <span class="apidocSignatureSpan">fs-jetpack.inspect.</span>validateInput
+        <span class="apidocSignatureSpan">(methodName, path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateInput = function (methodName, path, options) {
+  var methodSignature = methodName + &#x27;(path, [options])&#x27;;
+  validate.argument(methodSignature, &#x27;path&#x27;, path, [&#x27;string&#x27;]);
+  validate.options(methodSignature, &#x27;options&#x27;, options, {
+    checksum: [&#x27;string&#x27;],
+    mode: [&#x27;boolean&#x27;],
+    times: [&#x27;boolean&#x27;],
+    absolutePath: [&#x27;boolean&#x27;],
+    symlinks: [&#x27;string&#x27;]
+  });
+
+  if (options &#x26;&#x26; options.checksum !== undefined
+    &#x26;&#x26; supportedChecksumAlgorithms.indexOf(options.checksum) === -1) {
+    throw new Error(&#x27;Argument &#x22;options.checksum&#x22; passed to &#x27; + methodSignature
+      + &#x27; must have one of values: &#x27; + supportedChecksumAlgorithms.join(&#x27;, &#x27;));
+  }
+
+  if (options &#x26;&#x26; options.symlinks !== undefined
+    &#x26;&#x26; symlinkOptions.indexOf(options.symlinks) === -1) {
+    throw new Error(&#x27;Argument &#x22;options.symlinks&#x22; passed to &#x27; + methodSignature
+      + &#x27; must have one of values: &#x27; + symlinkOptions.join(&#x27;, &#x27;));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // API
+
+  var api = {
+cwd: cwd,
+path: getPath,
+
+append: function (path, data, options) {
+  append.<span class="apidocCodeKeywordSpan">validateInput</span>(&#x27;append&#x27;, path, data, options);
+  append.sync(resolvePath(path), data, options);
+},
+appendAsync: function (path, data, options) {
+  append.validateInput(&#x27;appendAsync&#x27;, path, data, options);
+  return append.async(resolvePath(path), data, options);
+},
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fs-jetpack.inspect_tree" id="apidoc.module.fs-jetpack.inspect_tree">module fs-jetpack.inspect_tree</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.inspect_tree.async" id="apidoc.element.fs-jetpack.inspect_tree.async">
+        function <span class="apidocSignatureSpan">fs-jetpack.inspect_tree.</span>async
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">async = function (path, options) {
+  options = options || {};
+
+  return inspectTreeNodeAsync(path, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return new Promise(function (resolve, reject) {
+    fs.appendFile(path, data, options)
+    .then(resolve)
+    .catch(function (err) {
+      if (err.code === &#x27;ENOENT&#x27;) {
+        // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+        // which will create the folder and file.
+        write.<span class="apidocCodeKeywordSpan">async</span>(path, data, options).then(resolve, reject);
+      } else {
+        reject(err);
+      }
+    });
+  });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.inspect_tree.sync" id="apidoc.element.fs-jetpack.inspect_tree.sync">
+        function <span class="apidocSignatureSpan">fs-jetpack.inspect_tree.</span>sync
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sync = function (path, options) {
+  options = options || {};
+
+  return inspectTreeNodeSync(path, options, undefined);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var appendSync = function (path, data, options) {
+  try {
+    fs.appendFileSync(path, data, options);
+  } catch (err) {
+    if (err.code === &#x27;ENOENT&#x27;) {
+      // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+      // which will create the folder and file.
+      write.<span class="apidocCodeKeywordSpan">sync</span>(path, data, options);
+    } else {
+      throw err;
+    }
+  }
+};
+
+// ---------------------------------------------------------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.inspect_tree.validateInput" id="apidoc.element.fs-jetpack.inspect_tree.validateInput">
+        function <span class="apidocSignatureSpan">fs-jetpack.inspect_tree.</span>validateInput
+        <span class="apidocSignatureSpan">(methodName, path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateInput = function (methodName, path, options) {
+  var methodSignature = methodName + &#x27;(path, [options])&#x27;;
+  validate.argument(methodSignature, &#x27;path&#x27;, path, [&#x27;string&#x27;]);
+  validate.options(methodSignature, &#x27;options&#x27;, options, {
+    checksum: [&#x27;string&#x27;],
+    relativePath: [&#x27;boolean&#x27;],
+    symlinks: [&#x27;string&#x27;]
+  });
+
+  if (options &#x26;&#x26; options.checksum !== undefined
+    &#x26;&#x26; inspect.supportedChecksumAlgorithms.indexOf(options.checksum) === -1) {
+    throw new Error(&#x27;Argument &#x22;options.checksum&#x22; passed to &#x27; + methodSignature
+      + &#x27; must have one of values: &#x27; + inspect.supportedChecksumAlgorithms.join(&#x27;, &#x27;));
+  }
+
+  if (options &#x26;&#x26; options.symlinks !== undefined
+    &#x26;&#x26; inspect.symlinkOptions.indexOf(options.symlinks) === -1) {
+    throw new Error(&#x27;Argument &#x22;options.symlinks&#x22; passed to &#x27; + methodSignature
+      + &#x27; must have one of values: &#x27; + inspect.symlinkOptions.join(&#x27;, &#x27;));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // API
+
+  var api = {
+cwd: cwd,
+path: getPath,
+
+append: function (path, data, options) {
+  append.<span class="apidocCodeKeywordSpan">validateInput</span>(&#x27;append&#x27;, path, data, options);
+  append.sync(resolvePath(path), data, options);
+},
+appendAsync: function (path, data, options) {
+  append.validateInput(&#x27;appendAsync&#x27;, path, data, options);
+  return append.async(resolvePath(path), data, options);
+},
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fs-jetpack.list" id="apidoc.module.fs-jetpack.list">module fs-jetpack.list</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.list.async" id="apidoc.element.fs-jetpack.list.async">
+        function <span class="apidocSignatureSpan">fs-jetpack.list.</span>async
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">async = function (path) {
+  return new Promise(function (resolve, reject) {
+    fs.readdir(path)
+    .then(function (list) {
+      resolve(list);
+    })
+    .catch(function (err) {
+      if (err.code === &#x27;ENOENT&#x27;) {
+        // Doesn&#x27;t exist. Return undefined instead of throwing.
+        resolve(undefined);
+      } else {
+        reject(err);
+      }
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return new Promise(function (resolve, reject) {
+    fs.appendFile(path, data, options)
+    .then(resolve)
+    .catch(function (err) {
+      if (err.code === &#x27;ENOENT&#x27;) {
+        // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+        // which will create the folder and file.
+        write.<span class="apidocCodeKeywordSpan">async</span>(path, data, options).then(resolve, reject);
+      } else {
+        reject(err);
+      }
+    });
+  });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.list.sync" id="apidoc.element.fs-jetpack.list.sync">
+        function <span class="apidocSignatureSpan">fs-jetpack.list.</span>sync
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sync = function (path) {
+  try {
+    return fs.readdirSync(path);
+  } catch (err) {
+    if (err.code === &#x27;ENOENT&#x27;) {
+      // Doesn&#x27;t exist. Return undefined instead of throwing.
+      return undefined;
+    }
+    throw err;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var appendSync = function (path, data, options) {
+  try {
+    fs.appendFileSync(path, data, options);
+  } catch (err) {
+    if (err.code === &#x27;ENOENT&#x27;) {
+      // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+      // which will create the folder and file.
+      write.<span class="apidocCodeKeywordSpan">sync</span>(path, data, options);
+    } else {
+      throw err;
+    }
+  }
+};
+
+// ---------------------------------------------------------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.list.validateInput" id="apidoc.element.fs-jetpack.list.validateInput">
+        function <span class="apidocSignatureSpan">fs-jetpack.list.</span>validateInput
+        <span class="apidocSignatureSpan">(methodName, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateInput = function (methodName, path) {
+  var methodSignature = methodName + &#x27;(path)&#x27;;
+  validate.argument(methodSignature, &#x27;path&#x27;, path, [&#x27;string&#x27;, &#x27;undefined&#x27;]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // API
+
+  var api = {
+cwd: cwd,
+path: getPath,
+
+append: function (path, data, options) {
+  append.<span class="apidocCodeKeywordSpan">validateInput</span>(&#x27;append&#x27;, path, data, options);
+  append.sync(resolvePath(path), data, options);
+},
+appendAsync: function (path, data, options) {
+  append.validateInput(&#x27;appendAsync&#x27;, path, data, options);
+  return append.async(resolvePath(path), data, options);
+},
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fs-jetpack.move" id="apidoc.module.fs-jetpack.move">module fs-jetpack.move</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.move.async" id="apidoc.element.fs-jetpack.move.async">
+        function <span class="apidocSignatureSpan">fs-jetpack.move.</span>async
+        <span class="apidocSignatureSpan">(from, to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">async = function (from, to) {
+  return new Promise(function (resolve, reject) {
+    fs.rename(from, to)
+    .then(resolve)
+    .catch(function (err) {
+      if (err.code !== &#x27;ENOENT&#x27;) {
+        // Something unknown. Rethrow original error.
+        reject(err);
+      } else {
+        // Ok, source or destination path doesn&#x27;t exist.
+        // Must do more investigation.
+        exists.async(from)
+        .then(function (srcExists) {
+          if (!srcExists) {
+            reject(generateSourceDoesntExistError(from));
+          } else {
+            ensureDestinationPathExistsAsync(to)
+            .then(function () {
+              // Retry the attempt
+              return fs.rename(from, to);
+            })
+            .then(resolve, reject);
+          }
+        })
+        .catch(reject);
+      }
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return new Promise(function (resolve, reject) {
+    fs.appendFile(path, data, options)
+    .then(resolve)
+    .catch(function (err) {
+      if (err.code === &#x27;ENOENT&#x27;) {
+        // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+        // which will create the folder and file.
+        write.<span class="apidocCodeKeywordSpan">async</span>(path, data, options).then(resolve, reject);
+      } else {
+        reject(err);
+      }
+    });
+  });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.move.sync" id="apidoc.element.fs-jetpack.move.sync">
+        function <span class="apidocSignatureSpan">fs-jetpack.move.</span>sync
+        <span class="apidocSignatureSpan">(from, to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sync = function (from, to) {
+  try {
+    fs.renameSync(from, to);
+  } catch (err) {
+    if (err.code !== &#x27;ENOENT&#x27;) {
+      // We can&#x27;t make sense of this error. Rethrow it.
+      throw err;
+    } else {
+      // Ok, source or destination path doesn&#x27;t exist.
+      // Must do more investigation.
+      if (!exists.sync(from)) {
+        throw generateSourceDoesntExistError(from);
+      }
+      if (!exists.sync(to)) {
+        // Some parent directory doesn&#x27;t exist. Create it.
+        dir.createSync(pathUtil.dirname(to));
+        // Retry the attempt
+        fs.renameSync(from, to);
+      }
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var appendSync = function (path, data, options) {
+  try {
+    fs.appendFileSync(path, data, options);
+  } catch (err) {
+    if (err.code === &#x27;ENOENT&#x27;) {
+      // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+      // which will create the folder and file.
+      write.<span class="apidocCodeKeywordSpan">sync</span>(path, data, options);
+    } else {
+      throw err;
+    }
+  }
+};
+
+// ---------------------------------------------------------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.move.validateInput" id="apidoc.element.fs-jetpack.move.validateInput">
+        function <span class="apidocSignatureSpan">fs-jetpack.move.</span>validateInput
+        <span class="apidocSignatureSpan">(methodName, from, to)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateInput = function (methodName, from, to) {
+  var methodSignature = methodName + &#x27;(from, to)&#x27;;
+  validate.argument(methodSignature, &#x27;from&#x27;, from, [&#x27;string&#x27;]);
+  validate.argument(methodSignature, &#x27;to&#x27;, to, [&#x27;string&#x27;]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // API
+
+  var api = {
+cwd: cwd,
+path: getPath,
+
+append: function (path, data, options) {
+  append.<span class="apidocCodeKeywordSpan">validateInput</span>(&#x27;append&#x27;, path, data, options);
+  append.sync(resolvePath(path), data, options);
+},
+appendAsync: function (path, data, options) {
+  append.validateInput(&#x27;appendAsync&#x27;, path, data, options);
+  return append.async(resolvePath(path), data, options);
+},
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fs-jetpack.read" id="apidoc.module.fs-jetpack.read">module fs-jetpack.read</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.read.async" id="apidoc.element.fs-jetpack.read.async">
+        function <span class="apidocSignatureSpan">fs-jetpack.read.</span>async
+        <span class="apidocSignatureSpan">(path, returnAs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">async = function (path, returnAs) {
+  return new Promise(function (resolve, reject) {
+    var retAs = returnAs || &#x27;utf8&#x27;;
+    var encoding = &#x27;utf8&#x27;;
+    if (retAs === &#x27;buffer&#x27;) {
+      encoding = null;
+    }
+
+    fs.readFile(path, { encoding: encoding })
+    .then(function (data) {
+      // Make final parsing of the data before returning.
+      try {
+        if (retAs === &#x27;json&#x27;) {
+          resolve(JSON.parse(data));
+        } else if (retAs === &#x27;jsonWithDates&#x27;) {
+          resolve(JSON.parse(data, jsonDateParser));
+        } else {
+          resolve(data);
+        }
+      } catch (err) {
+        reject(makeNicerJsonParsingError(path, err));
+      }
+    })
+    .catch(function (err) {
+      if (err.code === &#x27;ENOENT&#x27;) {
+        // If file doesn&#x27;t exist return undefined instead of throwing.
+        resolve(undefined);
+      } else {
+        // Otherwise throw
+        reject(err);
+      }
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return new Promise(function (resolve, reject) {
+    fs.appendFile(path, data, options)
+    .then(resolve)
+    .catch(function (err) {
+      if (err.code === &#x27;ENOENT&#x27;) {
+        // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+        // which will create the folder and file.
+        write.<span class="apidocCodeKeywordSpan">async</span>(path, data, options).then(resolve, reject);
+      } else {
+        reject(err);
+      }
+    });
+  });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.read.sync" id="apidoc.element.fs-jetpack.read.sync">
+        function <span class="apidocSignatureSpan">fs-jetpack.read.</span>sync
+        <span class="apidocSignatureSpan">(path, returnAs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sync = function (path, returnAs) {
+  var retAs = returnAs || &#x27;utf8&#x27;;
+  var data;
+
+  var encoding = &#x27;utf8&#x27;;
+  if (retAs === &#x27;buffer&#x27;) {
+    encoding = null;
+  }
+
+  try {
+    data = fs.readFileSync(path, { encoding: encoding });
+  } catch (err) {
+    if (err.code === &#x27;ENOENT&#x27;) {
+      // If file doesn&#x27;t exist return undefined instead of throwing.
+      return undefined;
+    }
+    // Otherwise rethrow the error
+    throw err;
+  }
+
+  try {
+    if (retAs === &#x27;json&#x27;) {
+      data = JSON.parse(data);
+    } else if (retAs === &#x27;jsonWithDates&#x27;) {
+      data = JSON.parse(data, jsonDateParser);
+    }
+  } catch (err) {
+    throw makeNicerJsonParsingError(path, err);
+  }
+
+  return data;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var appendSync = function (path, data, options) {
+  try {
+    fs.appendFileSync(path, data, options);
+  } catch (err) {
+    if (err.code === &#x27;ENOENT&#x27;) {
+      // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+      // which will create the folder and file.
+      write.<span class="apidocCodeKeywordSpan">sync</span>(path, data, options);
+    } else {
+      throw err;
+    }
+  }
+};
+
+// ---------------------------------------------------------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.read.validateInput" id="apidoc.element.fs-jetpack.read.validateInput">
+        function <span class="apidocSignatureSpan">fs-jetpack.read.</span>validateInput
+        <span class="apidocSignatureSpan">(methodName, path, returnAs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateInput = function (methodName, path, returnAs) {
+  var methodSignature = methodName + &#x27;(path, returnAs)&#x27;;
+  validate.argument(methodSignature, &#x27;path&#x27;, path, [&#x27;string&#x27;]);
+  validate.argument(methodSignature, &#x27;returnAs&#x27;, returnAs, [&#x27;string&#x27;, &#x27;undefined&#x27;]);
+
+  if (returnAs &#x26;&#x26; supportedReturnAs.indexOf(returnAs) === -1) {
+    throw new Error(&#x27;Argument &#x22;returnAs&#x22; passed to &#x27; + methodSignature
+      + &#x27; must have one of values: &#x27; + supportedReturnAs.join(&#x27;, &#x27;));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // API
+
+  var api = {
+cwd: cwd,
+path: getPath,
+
+append: function (path, data, options) {
+  append.<span class="apidocCodeKeywordSpan">validateInput</span>(&#x27;append&#x27;, path, data, options);
+  append.sync(resolvePath(path), data, options);
+},
+appendAsync: function (path, data, options) {
+  append.validateInput(&#x27;appendAsync&#x27;, path, data, options);
+  return append.async(resolvePath(path), data, options);
+},
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fs-jetpack.rename" id="apidoc.module.fs-jetpack.rename">module fs-jetpack.rename</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.rename.async" id="apidoc.element.fs-jetpack.rename.async">
+        function <span class="apidocSignatureSpan">fs-jetpack.rename.</span>async
+        <span class="apidocSignatureSpan">(path, newName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">async = function (path, newName) {
+  var newPath = pathUtil.join(pathUtil.dirname(path), newName);
+  return move.async(path, newPath);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return new Promise(function (resolve, reject) {
+    fs.appendFile(path, data, options)
+    .then(resolve)
+    .catch(function (err) {
+      if (err.code === &#x27;ENOENT&#x27;) {
+        // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+        // which will create the folder and file.
+        write.<span class="apidocCodeKeywordSpan">async</span>(path, data, options).then(resolve, reject);
+      } else {
+        reject(err);
+      }
+    });
+  });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.rename.sync" id="apidoc.element.fs-jetpack.rename.sync">
+        function <span class="apidocSignatureSpan">fs-jetpack.rename.</span>sync
+        <span class="apidocSignatureSpan">(path, newName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sync = function (path, newName) {
+  var newPath = pathUtil.join(pathUtil.dirname(path), newName);
+  move.sync(path, newPath);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var appendSync = function (path, data, options) {
+  try {
+    fs.appendFileSync(path, data, options);
+  } catch (err) {
+    if (err.code === &#x27;ENOENT&#x27;) {
+      // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+      // which will create the folder and file.
+      write.<span class="apidocCodeKeywordSpan">sync</span>(path, data, options);
+    } else {
+      throw err;
+    }
+  }
+};
+
+// ---------------------------------------------------------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.rename.validateInput" id="apidoc.element.fs-jetpack.rename.validateInput">
+        function <span class="apidocSignatureSpan">fs-jetpack.rename.</span>validateInput
+        <span class="apidocSignatureSpan">(methodName, path, newName)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateInput = function (methodName, path, newName) {
+  var methodSignature = methodName + &#x27;(path, newName)&#x27;;
+  validate.argument(methodSignature, &#x27;path&#x27;, path, [&#x27;string&#x27;]);
+  validate.argument(methodSignature, &#x27;newName&#x27;, newName, [&#x27;string&#x27;]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // API
+
+  var api = {
+cwd: cwd,
+path: getPath,
+
+append: function (path, data, options) {
+  append.<span class="apidocCodeKeywordSpan">validateInput</span>(&#x27;append&#x27;, path, data, options);
+  append.sync(resolvePath(path), data, options);
+},
+appendAsync: function (path, data, options) {
+  append.validateInput(&#x27;appendAsync&#x27;, path, data, options);
+  return append.async(resolvePath(path), data, options);
+},
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fs-jetpack.streams" id="apidoc.module.fs-jetpack.streams">module fs-jetpack.streams</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.streams.createReadStream" id="apidoc.element.fs-jetpack.streams.createReadStream">
+        function <span class="apidocSignatureSpan">fs-jetpack.streams.</span>createReadStream
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createReadStream = function (path, options) {
+  return new ReadStream(path, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// ---------------------------------------------------------
+// Async
+// ---------------------------------------------------------
+
+var fileChecksumAsync = function (path, algo) {
+return new Promise(function (resolve, reject) {
+  var hash = crypto.createHash(algo);
+  var s = fs.<span class="apidocCodeKeywordSpan">createReadStream</span>(path);
+  s.on(&#x27;data&#x27;, function (data) {
+    hash.update(data);
+  });
+  s.on(&#x27;end&#x27;, function () {
+    resolve(hash.digest(&#x27;hex&#x27;));
+  });
+  s.on(&#x27;error&#x27;, reject);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.streams.createWriteStream" id="apidoc.element.fs-jetpack.streams.createWriteStream">
+        function <span class="apidocSignatureSpan">fs-jetpack.streams.</span>createWriteStream
+        <span class="apidocSignatureSpan">(path, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createWriteStream = function (path, options) {
+  return new WriteStream(path, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+copyAsync: function (from, to, options) {
+  copy.validateInput(&#x27;copyAsync&#x27;, from, to, options);
+  return copy.async(resolvePath(from), resolvePath(to), options);
+},
+
+createWriteStream: function (path, options) {
+  return streams.<span class="apidocCodeKeywordSpan">createWriteStream</span>(resolvePath(path), options);
+},
+createReadStream: function (path, options) {
+  return streams.createReadStream(resolvePath(path), options);
+},
+
+dir: function (path, criteria) {
+  var normalizedPath;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fs-jetpack.symlink" id="apidoc.module.fs-jetpack.symlink">module fs-jetpack.symlink</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.symlink.async" id="apidoc.element.fs-jetpack.symlink.async">
+        function <span class="apidocSignatureSpan">fs-jetpack.symlink.</span>async
+        <span class="apidocSignatureSpan">(symlinkValue, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">async = function (symlinkValue, path) {
+  return new Promise(function (resolve, reject) {
+    fs.symlink(symlinkValue, path)
+    .then(resolve)
+    .catch(function (err) {
+      if (err.code === &#x27;ENOENT&#x27;) {
+        // Parent directories don&#x27;t exist. Just create them and rety.
+        dir.createAsync(pathUtil.dirname(path))
+        .then(function () {
+          return fs.symlink(symlinkValue, path);
+        })
+        .then(resolve, reject);
+      } else {
+        reject(err);
+      }
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return new Promise(function (resolve, reject) {
+    fs.appendFile(path, data, options)
+    .then(resolve)
+    .catch(function (err) {
+      if (err.code === &#x27;ENOENT&#x27;) {
+        // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+        // which will create the folder and file.
+        write.<span class="apidocCodeKeywordSpan">async</span>(path, data, options).then(resolve, reject);
+      } else {
+        reject(err);
+      }
+    });
+  });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.symlink.sync" id="apidoc.element.fs-jetpack.symlink.sync">
+        function <span class="apidocSignatureSpan">fs-jetpack.symlink.</span>sync
+        <span class="apidocSignatureSpan">(symlinkValue, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sync = function (symlinkValue, path) {
+  try {
+    fs.symlinkSync(symlinkValue, path);
+  } catch (err) {
+    if (err.code === &#x27;ENOENT&#x27;) {
+      // Parent directories don&#x27;t exist. Just create them and rety.
+      dir.createSync(pathUtil.dirname(path));
+      fs.symlinkSync(symlinkValue, path);
+    } else {
+      throw err;
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var appendSync = function (path, data, options) {
+  try {
+    fs.appendFileSync(path, data, options);
+  } catch (err) {
+    if (err.code === &#x27;ENOENT&#x27;) {
+      // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+      // which will create the folder and file.
+      write.<span class="apidocCodeKeywordSpan">sync</span>(path, data, options);
+    } else {
+      throw err;
+    }
+  }
+};
+
+// ---------------------------------------------------------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.symlink.validateInput" id="apidoc.element.fs-jetpack.symlink.validateInput">
+        function <span class="apidocSignatureSpan">fs-jetpack.symlink.</span>validateInput
+        <span class="apidocSignatureSpan">(methodName, symlinkValue, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateInput = function (methodName, symlinkValue, path) {
+  var methodSignature = methodName + &#x27;(symlinkValue, path)&#x27;;
+  validate.argument(methodSignature, &#x27;symlinkValue&#x27;, symlinkValue, [&#x27;string&#x27;]);
+  validate.argument(methodSignature, &#x27;path&#x27;, path, [&#x27;string&#x27;]);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // API
+
+  var api = {
+cwd: cwd,
+path: getPath,
+
+append: function (path, data, options) {
+  append.<span class="apidocCodeKeywordSpan">validateInput</span>(&#x27;append&#x27;, path, data, options);
+  append.sync(resolvePath(path), data, options);
+},
+appendAsync: function (path, data, options) {
+  append.validateInput(&#x27;appendAsync&#x27;, path, data, options);
+  return append.async(resolvePath(path), data, options);
+},
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fs-jetpack.utils" id="apidoc.module.fs-jetpack.utils">module fs-jetpack.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.utils.cleanAfterTest" id="apidoc.element.fs-jetpack.utils.cleanAfterTest">
+        function <span class="apidocSignatureSpan">fs-jetpack.utils.</span>cleanAfterTest
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cleanAfterTest = function () {
+  console.log(&#x27;Cleaning up after test...&#x27;);
+  return jetpack.removeAsync(testDirPath());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  .then(function () {
+    timer = utils.startTimer(&#x27;Native cp -R&#x27;);
+    return utils.exec(&#x27;cp -R &#x27; + toCopyDir.path() + &#x27; &#x27; + testDir.path(&#x27;copied-native&#x27;));
+  })
+  .then(function () {
+    nativeTime = timer();
+    utils.showDifferenceInfo(jetpackTime, nativeTime);
+    return utils.<span class="apidocCodeKeywordSpan">cleanAfterTest</span>();
+  })
+  .catch(function (err) {
+    console.log(err);
+  });
+};
+
+var testConfigs = [
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.utils.exec" id="apidoc.element.fs-jetpack.utils.exec">
+        function <span class="apidocSignatureSpan">fs-jetpack.utils.</span>exec
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exec = function () {
+  var i = 0;
+  var length = arguments.length;
+  var args = new Array(length);
+
+  for (; i &#x3c; length; i++) {
+    args[i] = arguments[i];
+  }
+
+  return new Promise(function (resolve, reject) {
+    args.push(function (err, data) {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(data);
+      }
+    });
+
+    fn.apply(null, args);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+})
+.then(function () {
+  jetpackTime = timer();
+  return utils.waitAWhile();
+})
+.then(function () {
+  timer = utils.startTimer(&#x27;Native cp -R&#x27;);
+  return utils.<span class="apidocCodeKeywordSpan">exec</span>(&#x27;cp -R &#x27; + toCopyDir.path() + &#x27; &#x27; + testDir.path
+(&#x27;copied-native&#x27;));
+})
+.then(function () {
+  nativeTime = timer();
+  utils.showDifferenceInfo(jetpackTime, nativeTime);
+  return utils.cleanAfterTest();
+})
+.catch(function (err) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.utils.prepareFiles" id="apidoc.element.fs-jetpack.utils.prepareFiles">
+        function <span class="apidocSignatureSpan">fs-jetpack.utils.</span>prepareFiles
+        <span class="apidocSignatureSpan">(jetpackDir, creationConfig)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prepareFiles = function (jetpackDir, creationConfig) {
+  return new Promise(function (resolve, reject) {
+    var count = 0;
+    var content = new Buffer(creationConfig.size);
+
+    var makeOneFile = function () {
+      jetpackDir.fileAsync(count + &#x27;.txt&#x27;, { content: content })
+      .then(function () {
+        count += 1;
+        if (count &#x3c; creationConfig.files) {
+          makeOneFile();
+        } else {
+          resolve();
+        }
+      }, reject);
+    };
+
+    console.log(&#x27;Preparing &#x27; + creationConfig.files + &#x27; test files (&#x27; +
+        humanReadableFileSize(creationConfig.size, true) + &#x27; each)...&#x27;);
+    makeOneFile();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var timer;
+var jetpackTime;
+var nativeTime;
+
+var test = function (testConfig) {
+console.log(&#x27;&#x27;);
+
+return utils.<span class="apidocCodeKeywordSpan">prepareFiles</span>(toCopyDir, testConfig)
+.then(utils.waitAWhile)
+.then(function () {
+  timer = utils.startTimer(&#x27;jetpack.copyAsync()&#x27;);
+  return toCopyDir.copyAsync(&#x27;.&#x27;, testDir.path(&#x27;copied-jetpack&#x27;));
+})
+.then(function () {
+  jetpackTime = timer();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.utils.prepareJetpackTestDir" id="apidoc.element.fs-jetpack.utils.prepareJetpackTestDir">
+        function <span class="apidocSignatureSpan">fs-jetpack.utils.</span>prepareJetpackTestDir
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prepareJetpackTestDir = function () {
+  return jetpack.dir(testDirPath(), { empty: true });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/* eslint no-console: 0 */
+
+&#x27;use strict&#x27;;
+
+var utils = require(&#x27;./utils&#x27;);
+
+var testDir = utils.<span class="apidocCodeKeywordSpan">prepareJetpackTestDir</span>();
+var toCopyDir = testDir.dir(&#x27;to-copy&#x27;);
+var timer;
+var jetpackTime;
+var nativeTime;
+
+var test = function (testConfig) {
+console.log(&#x27;&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.utils.showDifferenceInfo" id="apidoc.element.fs-jetpack.utils.showDifferenceInfo">
+        function <span class="apidocSignatureSpan">fs-jetpack.utils.</span>showDifferenceInfo
+        <span class="apidocSignatureSpan">(jetpackTime, nativeTime)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">showDifferenceInfo = function (jetpackTime, nativeTime) {
+  var perc = Math.round(jetpackTime / nativeTime * 100) - 100;
+  console.log(&#x27;Jetpack is &#x27; + perc + &#x27;% slower than native&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  })
+  .then(function () {
+    timer = utils.startTimer(&#x27;Native cp -R&#x27;);
+    return utils.exec(&#x27;cp -R &#x27; + toCopyDir.path() + &#x27; &#x27; + testDir.path(&#x27;copied-native&#x27;));
+  })
+  .then(function () {
+    nativeTime = timer();
+    utils.<span class="apidocCodeKeywordSpan">showDifferenceInfo</span>(jetpackTime, nativeTime);
+    return utils.cleanAfterTest();
+  })
+  .catch(function (err) {
+    console.log(err);
+  });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.utils.startTimer" id="apidoc.element.fs-jetpack.utils.startTimer">
+        function <span class="apidocSignatureSpan">fs-jetpack.utils.</span>startTimer
+        <span class="apidocSignatureSpan">(startMessage)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startTimer = function (startMessage) {
+  var start = Date.now();
+  process.stdout.write(startMessage + &#x27; ... &#x27;);
+  return function stop() {
+    var time = Date.now() - start;
+    console.log(time + &#x27;ms&#x27;);
+    return time;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var test = function (testConfig) {
+console.log(&#x27;&#x27;);
+
+return utils.prepareFiles(toCopyDir, testConfig)
+.then(utils.waitAWhile)
+.then(function () {
+  timer = utils.<span class="apidocCodeKeywordSpan">startTimer</span>(&#x27;jetpack.copyAsync()&#x27;);
+  return toCopyDir.copyAsync(&#x27;.&#x27;, testDir.path(&#x27;copied-jetpack&#x27;));
+})
+.then(function () {
+  jetpackTime = timer();
+  return utils.waitAWhile();
+})
+.then(function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.utils.waitAWhile" id="apidoc.element.fs-jetpack.utils.waitAWhile">
+        function <span class="apidocSignatureSpan">fs-jetpack.utils.</span>waitAWhile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">waitAWhile = function () {
+  return new Promise(function (resolve) {
+    console.log(&#x27;Waiting 5s to allow hardware buffers be emptied...&#x27;);
+    setTimeout(resolve, 5000);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+.then(utils.waitAWhile)
+.then(function () {
+  timer = utils.startTimer(&#x27;jetpack.copyAsync()&#x27;);
+  return toCopyDir.copyAsync(&#x27;.&#x27;, testDir.path(&#x27;copied-jetpack&#x27;));
+})
+.then(function () {
+  jetpackTime = timer();
+  return utils.<span class="apidocCodeKeywordSpan">waitAWhile</span>();
+})
+.then(function () {
+  timer = utils.startTimer(&#x27;Native cp -R&#x27;);
+  return utils.exec(&#x27;cp -R &#x27; + toCopyDir.path() + &#x27; &#x27; + testDir.path(&#x27;copied-native&#x27;));
+})
+.then(function () {
+  nativeTime = timer();
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.fs-jetpack.write" id="apidoc.module.fs-jetpack.write">module fs-jetpack.write</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.write.async" id="apidoc.element.fs-jetpack.write.async">
+        function <span class="apidocSignatureSpan">fs-jetpack.write.</span>async
+        <span class="apidocSignatureSpan">(path, data, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">async = function (path, data, options) {
+  var opts = options || {};
+  var processedData = serializeToJsonMaybe(data, opts.jsonIndent);
+
+  var writeStrategy = writeFileAsync;
+  if (opts.atomic) {
+    writeStrategy = writeAtomicAsync;
+  }
+  return writeStrategy(path, processedData, { mode: opts.mode });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return new Promise(function (resolve, reject) {
+    fs.appendFile(path, data, options)
+    .then(resolve)
+    .catch(function (err) {
+      if (err.code === &#x27;ENOENT&#x27;) {
+        // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+        // which will create the folder and file.
+        write.<span class="apidocCodeKeywordSpan">async</span>(path, data, options).then(resolve, reject);
+      } else {
+        reject(err);
+      }
+    });
+  });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.write.sync" id="apidoc.element.fs-jetpack.write.sync">
+        function <span class="apidocSignatureSpan">fs-jetpack.write.</span>sync
+        <span class="apidocSignatureSpan">(path, data, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sync = function (path, data, options) {
+  var opts = options || {};
+  var processedData = serializeToJsonMaybe(data, opts.jsonIndent);
+
+  var writeStrategy = writeFileSync;
+  if (opts.atomic) {
+    writeStrategy = writeAtomicSync;
+  }
+  writeStrategy(path, processedData, { mode: opts.mode });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var appendSync = function (path, data, options) {
+  try {
+    fs.appendFileSync(path, data, options);
+  } catch (err) {
+    if (err.code === &#x27;ENOENT&#x27;) {
+      // Parent directory doesn&#x27;t exist, so just pass the task to `write`,
+      // which will create the folder and file.
+      write.<span class="apidocCodeKeywordSpan">sync</span>(path, data, options);
+    } else {
+      throw err;
+    }
+  }
+};
+
+// ---------------------------------------------------------
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.fs-jetpack.write.validateInput" id="apidoc.element.fs-jetpack.write.validateInput">
+        function <span class="apidocSignatureSpan">fs-jetpack.write.</span>validateInput
+        <span class="apidocSignatureSpan">(methodName, path, data, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validateInput = function (methodName, path, data, options) {
+  var methodSignature = methodName + &#x27;(path, data, [options])&#x27;;
+  validate.argument(methodSignature, &#x27;path&#x27;, path, [&#x27;string&#x27;]);
+  validate.argument(methodSignature, &#x27;data&#x27;, data, [&#x27;string&#x27;, &#x27;buffer&#x27;, &#x27;object&#x27;, &#x27;array&#x27;]);
+  validate.options(methodSignature, &#x27;options&#x27;, options, {
+    atomic: [&#x27;boolean&#x27;],
+    jsonIndent: [&#x27;number&#x27;]
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // API
+
+  var api = {
+cwd: cwd,
+path: getPath,
+
+append: function (path, data, options) {
+  append.<span class="apidocCodeKeywordSpan">validateInput</span>(&#x27;append&#x27;, path, data, options);
+  append.sync(resolvePath(path), data, options);
+},
+appendAsync: function (path, data, options) {
+  append.validateInput(&#x27;appendAsync&#x27;, path, data, options);
+  return append.async(resolvePath(path), data, options);
+},
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
