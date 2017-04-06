@@ -1,17 +1,40 @@
 {
-    "buildNpmdoc":"fs-jetpack",
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "buildNpmdoc": "fs-jetpack",
+    "description": "api documentation for [fs-jetpack (v0.13.3)](https://github.com/szwacz/fs-jetpack) [![npm package](https://img.shields.io/npm/v/npmdoc-fs-jetpack.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-fs-jetpack) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-fs-jetpack.svg)](https://travis-ci.org/npmdoc/node-npmdoc-fs-jetpack)",
     "devDependencies": {
-        "fs-jetpack": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "fs-jetpack": "*",
         "utility2": "kaizhu256/node-utility2#alpha"
     },
-    "name":"npmdoc-fs-jetpack",
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-fs-jetpack",
+    "keywords": [
+        "documentation",
+        "fs-jetpack"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_fs_jetpack.js",
+    "name": "npmdoc-fs-jetpack",
+    "nameAlias": "npmdoc_fs_jetpack",
+    "nameOriginal": "npmdoc-fs-jetpack",
+    "os": [
+        "darwin",
+        "linux"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/npmdoc/node-npmdoc-fs-jetpack"
     },
     "scripts": {
-        "build-ci": "utility2 shReadmeTest build_ci.sh"
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "(set -e; npm install \"kaizhu256/node-utility2#alpha\"; utility2 shDeployHeroku)",
+        "postinstall": "if [ -f npm_scripts.sh ]; then ./npm_scripts.sh postinstall; fi",
+        "start": "(set -e; export PORT=${PORT:-8080}; utility2 start test.js)",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
     },
     "version": "0.0.1"
 }
