@@ -6,7 +6,7 @@
 <tspan x="10" y="58">&gt; (set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)</tspan>
 <tspan x="10" y="74"></tspan>
 <tspan x="10" y="90"></tspan>
-<tspan x="10" y="106">[MODE_BUILD=npmTest] - 2017-04-06T22:48:35Z - npm-testing /home/travis/build/npmdoc/node-npmdoc-\</tspan>
+<tspan x="10" y="106">[MODE_BUILD=npmTest] - 2017-04-06T22:50:24Z - npm-testing /home/travis/build/npmdoc/node-npmdoc-\</tspan>
 <tspan x="10" y="122">fs-jetpack</tspan>
 <tspan x="10" y="138"></tspan>
 <tspan x="10" y="154"></tspan>
@@ -14,7 +14,7 @@
 <tspan x="10" y="186">c-fs-jetpack/test.js</tspan>
 <tspan x="10" y="202">merging file:///home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/build/test-report.json to te\</tspan>
 <tspan x="10" y="218">st-report</tspan>
-<tspan x="10" y="234">&gt; server listening on http-port 49056</tspan>
+<tspan x="10" y="234">&gt; server listening on http-port 56848</tspan>
 <tspan x="10" y="250"></tspan>
 <tspan x="10" y="266">Preparing 50 test files (10.0 MB each)...</tspan>
 <tspan x="10" y="282"></tspan>
@@ -23,7 +23,7 @@
 <tspan x="10" y="330"></tspan>
 <tspan x="10" y="346"></tspan>
 <tspan x="10" y="362">browserTest - created electron entry-page /home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/e\</tspan>
-<tspan x="10" y="378">lectron.15b457488a90.6984a12142c98.html</tspan>
+<tspan x="10" y="378">lectron.15b457630d30.06ce3fb9af11a.html</tspan>
 <tspan x="10" y="394"></tspan>
 <tspan x="10" y="410">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
 <tspan x="10" y="426">[node test-case 1 of 6 passed] - testCase_buildLib_default</tspan>
@@ -31,93 +31,93 @@
 <tspan x="10" y="458">[node test-case 3 of 6 passed] - testCase_buildTest_default</tspan>
 <tspan x="10" y="474"></tspan>
 <tspan x="10" y="490">browserTest - created electron entry-page /home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/e\</tspan>
-<tspan x="10" y="506">lectron.15b4574899c0.d104f6588244e.html</tspan>
+<tspan x="10" y="506">lectron.15b4576319f0.45cec4d1f672e.html</tspan>
 <tspan x="10" y="522"></tspan>
 <tspan x="10" y="538">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
 <tspan x="10" y="554">Waiting 5s to allow hardware buffers be emptied...</tspan>
 <tspan x="10" y="570">merging file:///home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/build/test-report.json to te\</tspan>
 <tspan x="10" y="586">st-report</tspan>
 <tspan x="10" y="602">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
-<tspan x="10" y="618">[4906:0406/224838:WARNING:audio_manager.cc(314)] Multiple instances of AudioManager detected</tspan>
-<tspan x="10" y="634">[4906:0406/224838:WARNING:audio_manager.cc(275)] Multiple instances of AudioManager detected</tspan>
-<tspan x="10" y="650">[4948:0406/224838:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple threads \</tspan>
-<tspan x="10" y="666">in process gpu-process. </tspan>
-<tspan x="10" y="682">[4906:0406/224838:ERROR:browser_gpu_channel_host_factory.cc(131)] Failed to create channel.</tspan>
-<tspan x="10" y="698">&gt; merging file:///home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/build/test-report.json to \</tspan>
-<tspan x="10" y="714">test-report</tspan>
-<tspan x="10" y="730">server listening on http-port 56707</tspan>
-<tspan x="10" y="746">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
-<tspan x="10" y="762">[4923:0406/224838:WARNING:audio_manager.cc(314)] Multiple instances of AudioManager detected</tspan>
-<tspan x="10" y="778">[4923:0406/224838:WARNING:audio_manager.cc(275)] Multiple instances of AudioManager detected</tspan>
-<tspan x="10" y="794">[4982:0406/224839:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple threads \</tspan>
-<tspan x="10" y="810">in process gpu-process. </tspan>
-<tspan x="10" y="826"></tspan>
-<tspan x="10" y="842">browserTest - opened url /home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/build/apidoc.html</tspan>
-<tspan x="10" y="858"></tspan>
-<tspan x="10" y="874">[4923:0406/224839:ERROR:browser_gpu_channel_host_factory.cc(131)] Failed to create channel.</tspan>
+<tspan x="10" y="618">[6173:0406/225026:WARNING:audio_manager.cc(314)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="634">[6173:0406/225026:WARNING:audio_manager.cc(275)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="650">merging file:///home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/build/test-report.json to te\</tspan>
+<tspan x="10" y="666">st-report</tspan>
+<tspan x="10" y="682">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
+<tspan x="10" y="698">[6188:0406/225027:WARNING:audio_manager.cc(314)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="714">[6188:0406/225027:WARNING:audio_manager.cc(275)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="730">[6213:0406/225027:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple threads \</tspan>
+<tspan x="10" y="746">in process gpu-process. </tspan>
+<tspan x="10" y="762">[6173:0406/225027:ERROR:browser_gpu_channel_host_factory.cc(131)] Failed to create channel.</tspan>
+<tspan x="10" y="778">[6236:0406/225027:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple threads \</tspan>
+<tspan x="10" y="794">in process gpu-process. </tspan>
+<tspan x="10" y="810">[6188:0406/225027:ERROR:browser_gpu_channel_host_factory.cc(131)] Failed to create channel.</tspan>
+<tspan x="10" y="826">&gt; server listening on http-port 45472</tspan>
+<tspan x="10" y="842"></tspan>
+<tspan x="10" y="858">browserTest - opened url /home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/build/apidoc.html</tspan>
+<tspan x="10" y="874"></tspan>
 <tspan x="10" y="890"></tspan>
-<tspan x="10" y="906">browserTest - opened url http://127.0.0.1:49056?modeTest=1</tspan>
+<tspan x="10" y="906">browserTest - opened url http://127.0.0.1:56848?modeTest=1</tspan>
 <tspan x="10" y="922"></tspan>
-<tspan x="10" y="938">[4923:0406/224841:INFO:CONSOLE(250)] "----------|-----------|-----------|-----------|-----------\</tspan>
+<tspan x="10" y="938">[6188:0406/225029:INFO:CONSOLE(250)] "----------|-----------|-----------|-----------|-----------\</tspan>
 <tspan x="10" y="954">|</tspan>
 <tspan x="10" y="970">File      |   % Stmts |% Branches |   % Funcs |   % Lines |</tspan>
 <tspan x="10" y="986">----------|-----------|-----------|-----------|-----------|</tspan>
 <tspan x="10" y="1002">----------|-----------|-----------|-----------|-----------|</tspan>
 <tspan x="10" y="1018">All files |       100 |       100 |       100 |       100 |</tspan>
 <tspan x="10" y="1034">----------|-----------|-----------|-----------|-----------|</tspan>
-<tspan x="10" y="1050">", source: file:///home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/electron.15b4574899c0.d10\</tspan>
-<tspan x="10" y="1066">4f6588244e.html (250)</tspan>
-<tspan x="10" y="1082">[4923:0406/224841:INFO:CONSOLE(250)] "created coverage file:///tmp/build/coverage.html/index.htm\</tspan>
-<tspan x="10" y="1098">l", source: file:///home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/electron.15b4574899c0.d1\</tspan>
-<tspan x="10" y="1114">04f6588244e.html (250)</tspan>
+<tspan x="10" y="1050">", source: file:///home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/electron.15b4576319f0.45c\</tspan>
+<tspan x="10" y="1066">ec4d1f672e.html (250)</tspan>
+<tspan x="10" y="1082">[6188:0406/225029:INFO:CONSOLE(250)] "created coverage file:///tmp/build/coverage.html/index.htm\</tspan>
+<tspan x="10" y="1098">l", source: file:///home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/electron.15b4576319f0.45\</tspan>
+<tspan x="10" y="1114">cec4d1f672e.html (250)</tspan>
 <tspan x="10" y="1130">Preparing 10000 test files (1.0 kB each)...</tspan>
 <tspan x="10" y="1146">jetpack.copyAsync() ... [node test-case 4 of 6 passed] - testCase_buildApp_default</tspan>
-<tspan x="10" y="1162">931ms</tspan>
+<tspan x="10" y="1162">1219ms</tspan>
 <tspan x="10" y="1178">Waiting 5s to allow hardware buffers be emptied...</tspan>
 <tspan x="10" y="1194">Waiting 5s to allow hardware buffers be emptied...</tspan>
-<tspan x="10" y="1210">Native cp -R ... 902ms</tspan>
-<tspan x="10" y="1226">Jetpack is 3% slower than native</tspan>
+<tspan x="10" y="1210">Native cp -R ... 387ms</tspan>
+<tspan x="10" y="1226">Jetpack is 215% slower than native</tspan>
 <tspan x="10" y="1242">Cleaning up after test...</tspan>
 <tspan x="10" y="1258">jetpack.removeAsync() ... </tspan>
 <tspan x="10" y="1274">browserTest - created screenCapture file:///home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/\</tspan>
-<tspan x="10" y="1290">build/screenCapture.npmTest.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-fs-jetpack_2\</tspan>
-<tspan x="10" y="1306">Ftmp_2Fbuild_2Fapidoc.html.png</tspan>
+<tspan x="10" y="1290">build/screenCapture.npmTest.browser..png</tspan>
+<tspan x="10" y="1306"></tspan>
 <tspan x="10" y="1322"></tspan>
 <tspan x="10" y="1338">browserTest - created screenCapture file:///home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/\</tspan>
 <tspan x="10" y="1354">build/screenCapture.npmTest.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-fs-jetpack_2\</tspan>
-<tspan x="10" y="1370">Ftmp_2Fbuild_2Fapidoc.html.html</tspan>
+<tspan x="10" y="1370">Ftmp_2Fbuild_2Fapidoc.html.png</tspan>
 <tspan x="10" y="1386"></tspan>
-<tspan x="10" y="1402">browserTest - exit-code 0 - /home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/build/apidoc.ht\</tspan>
-<tspan x="10" y="1418">ml</tspan>
-<tspan x="10" y="1434"></tspan>
-<tspan x="10" y="1450">[node test-case 5 of 6 passed] - testCase_buildApidoc_default</tspan>
-<tspan x="10" y="1466"></tspan>
-<tspan x="10" y="1482">browserTest - created screenCapture file:///home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/\</tspan>
-<tspan x="10" y="1498">build/screenCapture.npmTest.browser..png</tspan>
+<tspan x="10" y="1402">browserTest - created screenCapture file:///home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/\</tspan>
+<tspan x="10" y="1418">build/screenCapture.npmTest.browser..html</tspan>
+<tspan x="10" y="1434">browserTest - created screenCapture file:///home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/\</tspan>
+<tspan x="10" y="1450">build/screenCapture.npmTest.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-fs-jetpack_2\</tspan>
+<tspan x="10" y="1466">Ftmp_2Fbuild_2Fapidoc.html.html</tspan>
+<tspan x="10" y="1482"></tspan>
+<tspan x="10" y="1498">browserTest - exit-code 0 - http://127.0.0.1:56848?modeTest=1</tspan>
 <tspan x="10" y="1514"></tspan>
-<tspan x="10" y="1530">browserTest - created screenCapture file:///home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/\</tspan>
-<tspan x="10" y="1546">build/screenCapture.npmTest.browser..html</tspan>
-<tspan x="10" y="1562"></tspan>
-<tspan x="10" y="1578">browserTest - exit-code 0 - http://127.0.0.1:49056?modeTest=1</tspan>
+<tspan x="10" y="1530"></tspan>
+<tspan x="10" y="1546">browserTest - merged coverage from /home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/coverage\</tspan>
+<tspan x="10" y="1562">.npmTest.browser.%2F.json</tspan>
+<tspan x="10" y="1578"></tspan>
 <tspan x="10" y="1594"></tspan>
-<tspan x="10" y="1610"></tspan>
-<tspan x="10" y="1626">browserTest - merged coverage from /home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/coverage\</tspan>
-<tspan x="10" y="1642">.npmTest.browser.%2F.json</tspan>
-<tspan x="10" y="1658"></tspan>
+<tspan x="10" y="1610">browserTest - merging test-report from /home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/test\</tspan>
+<tspan x="10" y="1626">-report.npmTest.browser.%2F.json</tspan>
+<tspan x="10" y="1642"></tspan>
+<tspan x="10" y="1658">[node test-case 5 of 6 passed] - testCase_webpage_default</tspan>
 <tspan x="10" y="1674"></tspan>
-<tspan x="10" y="1690">browserTest - merging test-report from /home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/test\</tspan>
-<tspan x="10" y="1706">-report.npmTest.browser.%2F.json</tspan>
+<tspan x="10" y="1690">browserTest - exit-code 0 - /home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/build/apidoc.ht\</tspan>
+<tspan x="10" y="1706">ml</tspan>
 <tspan x="10" y="1722"></tspan>
-<tspan x="10" y="1738">[node test-case 6 of 6 passed] - testCase_webpage_default</tspan>
-<tspan x="10" y="1754">{ Error: ENOENT: no such file or directory, rmdir '/tmp/jetpack-benchmark/to-be-removed-by-jetpa\</tspan>
-<tspan x="10" y="1770">ck'</tspan>
-<tspan x="10" y="1786">    at Error (native)</tspan>
-<tspan x="10" y="1802">  errno: -2,</tspan>
-<tspan x="10" y="1818">  code: 'ENOENT',</tspan>
-<tspan x="10" y="1834">  syscall: 'rmdir',</tspan>
-<tspan x="10" y="1850">  path: '/tmp/jetpack-benchmark/to-be-removed-by-jetpack' }</tspan>
-<tspan x="10" y="1866"></tspan>
-<tspan x="10" y="1882">Preparing 10000 test files (1.0 kB each)...</tspan>
+<tspan x="10" y="1738">[node test-case 6 of 6 passed] - testCase_buildApidoc_default</tspan>
+<tspan x="10" y="1754"></tspan>
+<tspan x="10" y="1770">Preparing 10000 test files (1.0 kB each)...</tspan>
+<tspan x="10" y="1786">{ Error: ENOENT: no such file or directory, rmdir '/tmp/jetpack-benchmark/to-be-removed-by-jetpa\</tspan>
+<tspan x="10" y="1802">ck'</tspan>
+<tspan x="10" y="1818">    at Error (native)</tspan>
+<tspan x="10" y="1834">  errno: -2,</tspan>
+<tspan x="10" y="1850">  code: 'ENOENT',</tspan>
+<tspan x="10" y="1866">  syscall: 'rmdir',</tspan>
+<tspan x="10" y="1882">  path: '/tmp/jetpack-benchmark/to-be-removed-by-jetpack' }</tspan>
 <tspan x="10" y="1898">-------------------------------|-----------|-----------|-----------|-----------|</tspan>
 <tspan x="10" y="1914">File                           |   % Stmts |% Branches |   % Funcs |   % Lines |</tspan>
 <tspan x="10" y="1930">-------------------------------|-----------|-----------|-----------|-----------|</tspan>
@@ -135,8 +135,8 @@
 <tspan x="10" y="2122">st-report</tspan>
 <tspan x="10" y="2138"></tspan>
 <tspan x="10" y="2154">-------------------------------------------------------</tspan>
-<tspan x="10" y="2170">| test-report - buildNpmdoc - node - linux v6.10.2 - 2017-04-06T22:48:12.887Z</tspan>
-<tspan x="10" y="2186">|   41975 ms            0 failed        6 passed      |</tspan>
+<tspan x="10" y="2170">| test-report - buildNpmdoc - node - linux v6.10.2 - 2017-04-06T22:49:36.868Z</tspan>
+<tspan x="10" y="2186">|   65097 ms            0 failed        6 passed      |</tspan>
 <tspan x="10" y="2202">-------------------------------------------------------</tspan>
 <tspan x="10" y="2218"></tspan>
 <tspan x="10" y="2234">created test-report file:///home/travis/build/npmdoc/node-npmdoc-fs-jetpack/tmp/build/test-repor\</tspan>
@@ -146,6 +146,6 @@
 <tspan x="10" y="2298">npmTest - 0 failed tests</tspan>
 <tspan x="10" y="2314"></tspan>
 <tspan x="10" y="2330"></tspan>
-<tspan x="10" y="2346">[MODE_BUILD=npmTest] - 2017-04-06T22:48:59Z - EXIT_CODE - 0</tspan>
+<tspan x="10" y="2346">[MODE_BUILD=npmTest] - 2017-04-06T22:50:45Z - EXIT_CODE - 0</tspan>
 </text>
 </svg>
