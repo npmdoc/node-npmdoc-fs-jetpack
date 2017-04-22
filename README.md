@@ -86,7 +86,8 @@
         "test": "mocha \"spec/**/*.spec.js\"",
         "test-with-coverage": "istanbul cover node_modules/.bin/_mocha -- 'spec/**/*.spec.js'"
     },
-    "version": "0.13.3"
+    "version": "0.13.3",
+    "bin": {}
 }
 ```
 
